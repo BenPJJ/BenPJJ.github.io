@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。   例如：;;;">
+<meta name="description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES5">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/es5/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。   例如：;;;">
+<meta property="og:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T04:27:27.858Z">
+<meta property="og:updated_time" content="2018-05-12T04:34:06.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES5">
-<meta name="twitter:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。   例如：;;;">
+<meta name="twitter:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
 
 
 
@@ -199,16 +199,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-web前端">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            web前端
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -310,10 +300,14 @@
 
       
         <p>##一基本语法：<br>1，语句和表达式的区别：<br>    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。<br>    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。<br>        例如：<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 4;var b = 5;</span><br></pre></td></tr></table></figure></p>
-<pre><code>分号前面可以没有任何内容，JavaScript引擎将其视为空语句。
-  例如：;;;
-</code></pre><hr>
+<pre><code>  分号前面可以没有任何内容，JavaScript引擎将其视为空语句。
+    例如：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;;;</span><br></pre></td></tr></table></figure>
 
+3)表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
+    例如：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1+2;</span><br><span class="line"><span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
     
