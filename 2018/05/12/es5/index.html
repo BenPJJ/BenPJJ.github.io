@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
+<meta name="description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES5">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/es5/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
+<meta property="og:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T04:34:06.633Z">
+<meta property="og:updated_time" content="2018-05-13T10:24:01.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES5">
-<meta name="twitter:description" content="##一基本语法：1，语句和表达式的区别：    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。        例如：        1var a = 4;var b = 5;   分号前面可以没有任何内容，JavaScript引擎将其视为空语句。     例如：">
+<meta name="twitter:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
 
 
 
@@ -299,15 +299,45 @@
       
 
       
-        <p>##一基本语法：<br>1，语句和表达式的区别：<br>    1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。<br>    2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。<br>        例如：<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 4;var b = 5;</span><br></pre></td></tr></table></figure></p>
-<pre><code>  分号前面可以没有任何内容，JavaScript引擎将其视为空语句。
-    例如：
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;;;</span><br></pre></td></tr></table></figure>
+        <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="一基本语法："><a href="#一基本语法：" class="headerlink" title="一基本语法："></a>一基本语法：</h2><p>1,语句和表达式的区别：<br>1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。<br>2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。</p>
+<h5 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 4;var b = 5;</span><br></pre></td></tr></table></figure>
+</code></pre><p>分号前面可以没有任何内容，JavaScript引擎将其视为空语句。</p>
+<h5 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;;;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。</p>
+<h5 id="例如：-2"><a href="#例如：-2" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1+2;</span><br><span class="line"><span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+</code></pre><p>2,变量<br>1)JavaScript 的变量名区分大小写，A和a是两个不同的变量。<br>2)变量的声明和赋值，是分开的两个步骤。</p>
+<h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">等价于</span><br><span class="line">var a;</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)变量提升<br>JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。</p>
+<h5 id="例如：-4"><a href="#例如：-4" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line">var a = 1;</span><br><span class="line">这时变量a还没有声明和赋值，所以这是一种错误的做法，但是实际上不会报错。因为存在变量提升，真正运行的是下面的代码。</span><br><span class="line">var a;</span><br><span class="line">console.log(a);//undefined</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3,标识符<br>1)标识符（identifier）指的是用来识别各种值的合法名称。<br>常见的如变量名、函数名。JavaScript 语言的标识符对大小写敏感，所以a和A是两个不同的标识符。<br>2)标识符有一套命名规则，不符合规则的就是非法标识符。JavaScript 引擎遇到非法标识符，就会报错。<br>命名规则：<br>第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。<br>第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。</p>
+<h5 id="例如：-5"><a href="#例如：-5" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 合法</span><br><span class="line">arg0</span><br><span class="line">_tmp</span><br><span class="line">var 临时变量 = 1；</span><br><span class="line"><span class="variable">$elem</span></span><br><span class="line">  不合法</span><br><span class="line">  1a // 第一个字符不能是数字</span><br><span class="line">  23</span><br><span class="line">  ***    // 标识符不能包含星号</span><br><span class="line">  a+b    // 标识符不能包含加号</span><br><span class="line">  -d // 标识符不能包含减号或连词线</span><br></pre></td></tr></table></figure>
 
-3)表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
-    例如：
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1+2;</span><br><span class="line"><span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript有一些保留字，不能用作标识符：arguments、<span class="built_in">break</span>、<span class="keyword">case</span>、catch、class、const、<span class="built_in">continue</span>、debugger、default、delete、<span class="keyword">do</span>、<span class="keyword">else</span>、enum、<span class="built_in">eval</span>、<span class="built_in">export</span>、extends、<span class="literal">false</span>、finally、<span class="keyword">for</span>、<span class="keyword">function</span>、<span class="keyword">if</span>、implements、import、<span class="keyword">in</span>、instanceof、interface、<span class="built_in">let</span>、new、null、package、private、protected、public、<span class="built_in">return</span>、static、super、switch、this、throw、<span class="literal">true</span>、try、typeof、var、void、<span class="keyword">while</span>、with、yield。</span><br></pre></td></tr></table></figure>
+</code></pre><p>4,注释<br>1)// 这是单行注释<br><!--单行注释--><br>2)/<em><br> 这是<br> 多行<br> 注释
+</em>/<br>5,区块<br>1)JavaScript 使用大括号，将多个相关的语句组合在一起，称为“区块”（block）。<br>6,条件语句<br>1)if 结构<br>if结构先判断一个表达式的布尔值，然后根据布尔值的真伪，执行不同的语句。</p>
+<h5 id="例如：-6"><a href="#例如：-6" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m === 1)&#123;</span><br><span class="line">    m = m+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>赋值表达式（=）、严格相等运算符（===）和相等运算符（==）。尤其是赋值表达式不具有比较作用。</p>
+<h5 id="例如：-7"><a href="#例如：-7" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> var x = 1;</span><br><span class="line"> var y = 2;</span><br><span class="line"><span class="keyword">if</span>(x = y)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>常量不能被赋值。</p>
+<h5 id="例如：-8"><a href="#例如：-8" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(2=x)&#123;&#125;//报错</span><br><span class="line"><span class="keyword">if</span>(x=2)&#123;&#125;//不报错</span><br></pre></td></tr></table></figure>
+</code></pre><p>2)if…else 结构<br>3)switch结构<br>多个if…else连在一起使用的时候，可以转为使用更方便的switch结构。</p>
+<h5 id="例如：-9"><a href="#例如：-9" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var x =2;</span><br><span class="line"><span class="keyword">if</span>(x==0)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(x==1)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">等价于</span><br><span class="line">switch语句内部采用的是“严格相等运算符”。</span><br><span class="line">switch(x)&#123;</span><br><span class="line">    <span class="keyword">case</span> 1:console.log(x);</span><br><span class="line">    <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 2:console.log(x);</span><br><span class="line">    <span class="built_in">break</span>;</span><br><span class="line">    default:console.log(x);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>4)三元运算符 ?:<br>如果“条件”为true，则返回“表达式1”的值，否则返回“表达式2”的值。</p>
+<h4 id="例如：-10"><a href="#例如：-10" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(条件) ? 表达式1 : 表达式2</span><br></pre></td></tr></table></figure>
+</code></pre><p>7,循环语句<br>1)while 循环</p>
+<h4 id="例如：-11"><a href="#例如：-11" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var i =0;</span><br><span class="line"><span class="keyword">while</span>(i&lt;100)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>2)for 循环</p>
+<h4 id="例如：-12"><a href="#例如：-12" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=0;i&lt;5;i++)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)do…while 循环</p>
+<h4 id="例如：-13"><a href="#例如：-13" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a =1;</span><br><span class="line">var b =2;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    a++;</span><br><span class="line">&#125;<span class="keyword">while</span>(a&lt;b);</span><br></pre></td></tr></table></figure>
+</code></pre><p>不管条件是否为真，do…while循环至少运行一次。另外，while语句后面的分号注意不要省略。<br>4)break 语句和 continue 语句<br>break语句和continue语句都具有跳转作用，可以让代码不按既有的顺序执行。<br>break语句用于跳出代码块或循环。</p>
+<h4 id="例如：-14"><a href="#例如：-14" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"><span class="keyword">while</span>(i &lt; 100) &#123;</span><br><span class="line">     console.log(<span class="string">'i 当前为：'</span> + i);</span><br><span class="line">     i++;</span><br><span class="line">     <span class="keyword">if</span> (i === 10) <span class="built_in">break</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>continue语句用于立即终止本轮循环，返回循环结构的头部，开始下一轮循环。   </p>
+<h4 id="例如：-15"><a href="#例如：-15" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"><span class="keyword">while</span>(i &lt; 100) &#123;</span><br><span class="line">     i++;</span><br><span class="line">     <span class="keyword">if</span> (i%2 === 0) <span class="built_in">continue</span>;</span><br><span class="line">     console.log(<span class="string">'i 当前为：'</span> + i);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>5)标签（label）<br>JavaScript 语言允许，语句的前面有标签（label），相当于定位符，用于跳转到程序的任意位置。<br>标签可以是任意的标识符，但不能是保留字，语句部分可以是任意语句。标签通常与break语句和continue语句配合使用，跳出特定的循环。</p>
+<h4 id="例如：-16"><a href="#例如：-16" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">top:</span><br><span class="line">  <span class="keyword">for</span>(var i=0;i&lt;3;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(var j=0;j&lt;3;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(i===1 &amp;&amp; j===1)<span class="built_in">break</span> top;</span><br><span class="line">          console.log(<span class="string">'i='</span>+i+<span class="string">',j='</span>+j);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码为一个双重循环区块，break命令后面加上了top标签（注意，top不用加引号），满足条件时，直接跳出双层循环。如果break语句后面不使用标签，则只能跳出内层循环，进入下一次的外层循环。            </p>
+
       
     </div>
     
@@ -391,8 +421,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -434,6 +473,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一基本语法："><span class="nav-number">1.1.</span> <span class="nav-text">一基本语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如："><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-1"><span class="nav-number">1.1.0.0.2.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-2"><span class="nav-number">1.1.0.0.3.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-3"><span class="nav-number">1.1.0.0.4.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-4"><span class="nav-number">1.1.0.0.5.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-5"><span class="nav-number">1.1.0.0.6.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-6"><span class="nav-number">1.1.0.0.7.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-7"><span class="nav-number">1.1.0.0.8.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-8"><span class="nav-number">1.1.0.0.9.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-9"><span class="nav-number">1.1.0.0.10.</span> <span class="nav-text">例如：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-10"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-11"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-12"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-13"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-14"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-15"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-16"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
