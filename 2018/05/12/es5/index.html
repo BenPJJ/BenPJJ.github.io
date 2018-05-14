@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
 <meta property="og:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-13T10:24:01.751Z">
+<meta property="og:updated_time" content="2018-05-14T02:08:30.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES5">
 <meta name="twitter:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
@@ -305,7 +305,8 @@
 <h5 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;;;</span><br></pre></td></tr></table></figure>
 </code></pre><p>3)表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。</p>
 <h5 id="例如：-2"><a href="#例如：-2" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1+2;</span><br><span class="line"><span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
-</code></pre><p>2,变量<br>1)JavaScript 的变量名区分大小写，A和a是两个不同的变量。<br>2)变量的声明和赋值，是分开的两个步骤。</p>
+</code></pre><a id="more"></a>
+<p>2,变量<br>1)JavaScript 的变量名区分大小写，A和a是两个不同的变量。<br>2)变量的声明和赋值，是分开的两个步骤。</p>
 <h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">等价于</span><br><span class="line">var a;</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
 </code></pre><p>3)变量提升<br>JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。</p>
 <h5 id="例如：-4"><a href="#例如：-4" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line">var a = 1;</span><br><span class="line">这时变量a还没有声明和赋值，所以这是一种错误的做法，但是实际上不会报错。因为存在变量提升，真正运行的是下面的代码。</span><br><span class="line">var a;</span><br><span class="line">console.log(a);//undefined</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
