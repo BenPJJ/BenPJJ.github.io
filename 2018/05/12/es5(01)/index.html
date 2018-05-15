@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES5(01)">
+<meta property="og:url" content="http://yoursite.com/2018/05/12/es5(01)/index.html">
+<meta property="og:site_name" content="BenPJJ&#39;s Blog">
+<meta property="og:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-14T02:13:06.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES5(01)">
+<meta name="twitter:description" content="语法一基本语法：1,语句和表达式的区别：1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。 例如：1var a = 4;var b = 5; 分号前面可以没有任何内容，JavaScript引擎将其视为空语句。 例如：1;;; 3)表达式不需要分号结尾。一旦在表达式后面添加分号，则">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/12/es5(01)/"/>
+
+
+
+
+
+  <title>ES5(01) | BenPJJ's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/benPJJ"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BenPJJ's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">personal notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/es5(01)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PJJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BenPJJ's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES5(01)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T12:19:23+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/12/es5(01)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/12/es5(01)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="一基本语法："><a href="#一基本语法：" class="headerlink" title="一基本语法："></a>一基本语法：</h2><p>1,语句和表达式的区别：<br>1）前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。<br>2)语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。</p>
+<h5 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 4;var b = 5;</span><br></pre></td></tr></table></figure>
+</code></pre><p>分号前面可以没有任何内容，JavaScript引擎将其视为空语句。</p>
+<h5 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;;;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。</p>
+<h5 id="例如：-2"><a href="#例如：-2" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1+2;</span><br><span class="line"><span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+</code></pre><a id="more"></a>
+<p>2,变量<br>1)JavaScript 的变量名区分大小写，A和a是两个不同的变量。<br>2)变量的声明和赋值，是分开的两个步骤。</p>
+<h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">等价于</span><br><span class="line">var a;</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)变量提升<br>JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。</p>
+<h5 id="例如：-4"><a href="#例如：-4" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line">var a = 1;</span><br><span class="line">这时变量a还没有声明和赋值，所以这是一种错误的做法，但是实际上不会报错。因为存在变量提升，真正运行的是下面的代码。</span><br><span class="line">var a;</span><br><span class="line">console.log(a);//undefined</span><br><span class="line">a=1;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3,标识符<br>1)标识符（identifier）指的是用来识别各种值的合法名称。<br>常见的如变量名、函数名。JavaScript 语言的标识符对大小写敏感，所以a和A是两个不同的标识符。<br>2)标识符有一套命名规则，不符合规则的就是非法标识符。JavaScript 引擎遇到非法标识符，就会报错。<br>命名规则：<br>第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。<br>第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。</p>
+<h5 id="例如：-5"><a href="#例如：-5" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 合法</span><br><span class="line">arg0</span><br><span class="line">_tmp</span><br><span class="line">var 临时变量 = 1；</span><br><span class="line"><span class="variable">$elem</span></span><br><span class="line">  不合法</span><br><span class="line">  1a // 第一个字符不能是数字</span><br><span class="line">  23</span><br><span class="line">  ***    // 标识符不能包含星号</span><br><span class="line">  a+b    // 标识符不能包含加号</span><br><span class="line">  -d // 标识符不能包含减号或连词线</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript有一些保留字，不能用作标识符：arguments、<span class="built_in">break</span>、<span class="keyword">case</span>、catch、class、const、<span class="built_in">continue</span>、debugger、default、delete、<span class="keyword">do</span>、<span class="keyword">else</span>、enum、<span class="built_in">eval</span>、<span class="built_in">export</span>、extends、<span class="literal">false</span>、finally、<span class="keyword">for</span>、<span class="keyword">function</span>、<span class="keyword">if</span>、implements、import、<span class="keyword">in</span>、instanceof、interface、<span class="built_in">let</span>、new、null、package、private、protected、public、<span class="built_in">return</span>、static、super、switch、this、throw、<span class="literal">true</span>、try、typeof、var、void、<span class="keyword">while</span>、with、yield。</span><br></pre></td></tr></table></figure>
+</code></pre><p>4,注释<br>1)// 这是单行注释<br><!--单行注释--><br>2)/<em><br> 这是<br> 多行<br> 注释
+</em>/<br>5,区块<br>1)JavaScript 使用大括号，将多个相关的语句组合在一起，称为“区块”（block）。<br>6,条件语句<br>1)if 结构<br>if结构先判断一个表达式的布尔值，然后根据布尔值的真伪，执行不同的语句。</p>
+<h5 id="例如：-6"><a href="#例如：-6" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m === 1)&#123;</span><br><span class="line">    m = m+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>赋值表达式（=）、严格相等运算符（===）和相等运算符（==）。尤其是赋值表达式不具有比较作用。</p>
+<h5 id="例如：-7"><a href="#例如：-7" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> var x = 1;</span><br><span class="line"> var y = 2;</span><br><span class="line"><span class="keyword">if</span>(x = y)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>常量不能被赋值。</p>
+<h5 id="例如：-8"><a href="#例如：-8" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(2=x)&#123;&#125;//报错</span><br><span class="line"><span class="keyword">if</span>(x=2)&#123;&#125;//不报错</span><br></pre></td></tr></table></figure>
+</code></pre><p>2)if…else 结构<br>3)switch结构<br>多个if…else连在一起使用的时候，可以转为使用更方便的switch结构。</p>
+<h5 id="例如：-9"><a href="#例如：-9" class="headerlink" title="例如："></a>例如：</h5><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var x =2;</span><br><span class="line"><span class="keyword">if</span>(x==0)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(x==1)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">等价于</span><br><span class="line">switch语句内部采用的是“严格相等运算符”。</span><br><span class="line">switch(x)&#123;</span><br><span class="line">    <span class="keyword">case</span> 1:console.log(x);</span><br><span class="line">    <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 2:console.log(x);</span><br><span class="line">    <span class="built_in">break</span>;</span><br><span class="line">    default:console.log(x);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>4)三元运算符 ?:<br>如果“条件”为true，则返回“表达式1”的值，否则返回“表达式2”的值。</p>
+<h4 id="例如：-10"><a href="#例如：-10" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(条件) ? 表达式1 : 表达式2</span><br></pre></td></tr></table></figure>
+</code></pre><p>7,循环语句<br>1)while 循环</p>
+<h4 id="例如：-11"><a href="#例如：-11" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var i =0;</span><br><span class="line"><span class="keyword">while</span>(i&lt;100)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>2)for 循环</p>
+<h4 id="例如：-12"><a href="#例如：-12" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=0;i&lt;5;i++)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>3)do…while 循环</p>
+<h4 id="例如：-13"><a href="#例如：-13" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a =1;</span><br><span class="line">var b =2;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    a++;</span><br><span class="line">&#125;<span class="keyword">while</span>(a&lt;b);</span><br></pre></td></tr></table></figure>
+</code></pre><p>不管条件是否为真，do…while循环至少运行一次。另外，while语句后面的分号注意不要省略。<br>4)break 语句和 continue 语句<br>break语句和continue语句都具有跳转作用，可以让代码不按既有的顺序执行。<br>break语句用于跳出代码块或循环。</p>
+<h4 id="例如：-14"><a href="#例如：-14" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"><span class="keyword">while</span>(i &lt; 100) &#123;</span><br><span class="line">     console.log(<span class="string">'i 当前为：'</span> + i);</span><br><span class="line">     i++;</span><br><span class="line">     <span class="keyword">if</span> (i === 10) <span class="built_in">break</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>continue语句用于立即终止本轮循环，返回循环结构的头部，开始下一轮循环。   </p>
+<h4 id="例如：-15"><a href="#例如：-15" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"><span class="keyword">while</span>(i &lt; 100) &#123;</span><br><span class="line">     i++;</span><br><span class="line">     <span class="keyword">if</span> (i%2 === 0) <span class="built_in">continue</span>;</span><br><span class="line">     console.log(<span class="string">'i 当前为：'</span> + i);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>5)标签（label）<br>JavaScript 语言允许，语句的前面有标签（label），相当于定位符，用于跳转到程序的任意位置。<br>标签可以是任意的标识符，但不能是保留字，语句部分可以是任意语句。标签通常与break语句和continue语句配合使用，跳出特定的循环。</p>
+<h4 id="例如：-16"><a href="#例如：-16" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">top:</span><br><span class="line">  <span class="keyword">for</span>(var i=0;i&lt;3;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(var j=0;j&lt;3;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(i===1 &amp;&amp; j===1)<span class="built_in">break</span> top;</span><br><span class="line">          console.log(<span class="string">'i='</span>+i+<span class="string">',j='</span>+j);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码为一个双重循环区块，break命令后面加上了top标签（注意，top不用加引号），满足条件时，直接跳出双层循环。如果break语句后面不使用标签，则只能跳出内层循环，进入下一次的外层循环。            </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/10/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/14/es5(02)/" rel="prev" title="ES5(02)">
+                ES5(02) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">PJJ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一基本语法："><span class="nav-number">1.1.</span> <span class="nav-text">一基本语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如："><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-1"><span class="nav-number">1.1.0.0.2.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-2"><span class="nav-number">1.1.0.0.3.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-3"><span class="nav-number">1.1.0.0.4.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-4"><span class="nav-number">1.1.0.0.5.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-5"><span class="nav-number">1.1.0.0.6.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-6"><span class="nav-number">1.1.0.0.7.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-7"><span class="nav-number">1.1.0.0.8.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-8"><span class="nav-number">1.1.0.0.9.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例如：-9"><span class="nav-number">1.1.0.0.10.</span> <span class="nav-text">例如：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-10"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-11"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-12"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-13"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-14"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-15"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-16"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PJJ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://benpjj.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/05/12/es5(01)/';
+          this.page.identifier = '2018/05/12/es5(01)/';
+          this.page.title = 'ES5(01)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://benpjj.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
