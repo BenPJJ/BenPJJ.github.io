@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象) 数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据">
+<meta name="description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES5(02)">
 <meta property="og:url" content="http://yoursite.com/2018/05/14/es5(02)/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象) 数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据">
+<meta property="og:description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-14T06:07:45.440Z">
+<meta property="og:updated_time" content="2018-05-15T09:13:41.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES5(02)">
-<meta name="twitter:description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象) 数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据">
+<meta name="twitter:description" content="数据类型1,概况JavaScript 的数据类型，共有六种。 例如：123456number(数值)：整数和小数(1,3.14)string(字符串)：文本(hello world)boolean(布尔值)：(true,false)undefined:未定义null:空值object:(对象)">
 
 
 
@@ -353,11 +353,11 @@
       
         <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>1,概况<br>JavaScript 的数据类型，共有六种。</p>
 <h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">number(数值)：整数和小数(1,3.14)</span><br><span class="line">string(字符串)：文本(hello world)</span><br><span class="line">boolean(布尔值)：(<span class="literal">true</span>,<span class="literal">false</span>)</span><br><span class="line">undefined:未定义</span><br><span class="line">null:空值</span><br><span class="line">object:(对象)</span><br></pre></td></tr></table></figure>
-</code></pre><p>数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据类型，不能再细分了。对象则称为合成类型（complex type）的值，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。至于undefined和null，一般将它们看成两个特殊值。    </p>
+</code></pre><a id="more"></a>        
+<p>数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据类型，不能再细分了。对象则称为合成类型（complex type）的值，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。至于undefined和null，一般将它们看成两个特殊值。    </p>
 <p>对象是最复杂的数据类型，又可以分成三个子类型。 </p>
 <h4 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">object(狭义的对象)</span><br><span class="line">array(数组)</span><br><span class="line"><span class="keyword">function</span>(函数)</span><br></pre></td></tr></table></figure>
-</code></pre><a id="more"></a>
-<p>2,typeof 运算符<br>JavaScript 有三种方法，可以确定一个值到底是什么类型。</p>
+</code></pre><p>2,typeof 运算符<br>JavaScript 有三种方法，可以确定一个值到底是什么类型。</p>
 <h4 id="例如：-2"><a href="#例如：-2" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof(运算符)</span><br><span class="line">instanceof(运算符)</span><br><span class="line">Object.prototype.toString(方法)</span><br></pre></td></tr></table></figure>
 </code></pre><p>typeof运算符可以返回一个值的数据类型。</p>
 <h4 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">typeof 123  //numbel</span><br><span class="line">typeof <span class="string">'123'</span>    //string</span><br><span class="line">typeof <span class="literal">false</span>    //boobean</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f</span></span>()&#123;&#125;</span><br><span class="line">typeof f    //<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line">typeof undefinedw   //undefined</span><br><span class="line"></span><br><span class="line">typeof null //object   </span><br><span class="line">typeof window   //object</span><br><span class="line">typeof &#123;&#125;   //object</span><br><span class="line">typeof []   //object</span><br></pre></td></tr></table></figure>
