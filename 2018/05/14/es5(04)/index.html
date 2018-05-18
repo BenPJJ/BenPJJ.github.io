@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="函数1,概述函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。1)函数的声明JavaScript 有三种声明函数的方法。 例如：1234567891011121314151617181920//function 命令function print(s)&amp;#123;    console.log(s);&amp;#125;//函数表达式var print = function">
+<meta name="description" content="函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES5(04)">
 <meta property="og:url" content="http://yoursite.com/2018/05/14/es5(04)/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="函数1,概述函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。1)函数的声明JavaScript 有三种声明函数的方法。 例如：1234567891011121314151617181920//function 命令function print(s)&amp;#123;    console.log(s);&amp;#125;//函数表达式var print = function">
+<meta property="og:description" content="函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T04:52:13.809Z">
+<meta property="og:updated_time" content="2018-05-18T05:35:37.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES5(04)">
-<meta name="twitter:description" content="函数1,概述函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。1)函数的声明JavaScript 有三种声明函数的方法。 例如：1234567891011121314151617181920//function 命令function print(s)&amp;#123;    console.log(s);&amp;#125;//函数表达式var print = function">
+<meta name="twitter:description" content="函数">
 
 
 
@@ -351,8 +351,8 @@
       
 
       
-        <a id="more"></a>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>1,概述<br>函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。<br>1)函数的声明<br>JavaScript 有三种声明函数的方法。</p>
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><a id="more"></a>
+<p>1,概述<br>函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。<br>1)函数的声明<br>JavaScript 有三种声明函数的方法。</p>
 <h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">function</span> 命令</span><br><span class="line"><span class="keyword">function</span> <span class="built_in">print</span>(s)&#123;</span><br><span class="line">    console.log(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//函数表达式</span><br><span class="line">var <span class="built_in">print</span> = <span class="keyword">function</span>(s)&#123;</span><br><span class="line">    console.log(s);</span><br><span class="line">&#125;;</span><br><span class="line">//如果加上函数名，该函数名只在函数体内部有效，在函数体外部无效。</span><br><span class="line">var <span class="built_in">print</span> = <span class="keyword">function</span> <span class="function"><span class="title">x</span></span>()&#123;</span><br><span class="line">    console.log(typeof x);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//Function 构造函数</span><br><span class="line">var add = new Function(</span><br><span class="line">    <span class="string">'x'</span>,</span><br><span class="line">    <span class="string">'y'</span>,</span><br><span class="line">    <span class="string">'return x+y'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 </code></pre><p>2)函数的重复声明<br>如果同一个函数被多次声明，后面的声明就会覆盖前面的声明。</p>
 <p>3)圆括号运算符，return 语句和递归<br>调用函数时，要使用圆括号运算符。</p>
