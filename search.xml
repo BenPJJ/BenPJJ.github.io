@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css元素]]></title>
+    <url>%2F2018%2F05%2F18%2Fcss%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[#]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[css选择器权重]]></title>
     <url>%2F2018%2F05%2F18%2Fcss%E6%9D%83%E9%87%8D%2F</url>
-    <content type="text"><![CDATA[CSS优先级权重计算法例如：12345678910#id(100) &gt; .class(10) &gt; 标签选择符(1)细分标签内选择符(1000)&gt;ID选择符(100)&gt;Class选择符(10)&gt;元素选择符(1)标签内选择符:元素标签中定义的样式（Style属性）.class||伪类':active,:focus,:hover,:link,:visited,:first-child,:lang'||属性选择符'[title]'(10)标签||伪元素选择符':first-letter,:first-line,:before,:after'(1)通配符'*'(0)]]></content>
+    <content type="text"><![CDATA[CSS优先级权重计算法 例如：12345678910#id(100) &gt; .class(10) &gt; 标签选择符(1)细分标签内选择符(1000)&gt;ID选择符(100)&gt;Class选择符(10)&gt;元素选择符(1)标签内选择符:元素标签中定义的样式（Style属性）.class||伪类':active,:focus,:hover,:link,:visited,:first-child,:lang'||属性选择符'[title]'(10)标签||伪元素选择符':first-letter,:first-line,:before,:after'(1)通配符'*'(0)]]></content>
   </entry>
   <entry>
     <title><![CDATA[dl表格]]></title>
