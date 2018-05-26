@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="description" content="选择器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dl表格">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/dl表格/index.html">
+<meta property="og:title" content="css选择器">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/css选择器/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="html dl dt dd标签元素语法结构与使用">
+<meta property="og:description" content="选择器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T05:35:09.060Z">
+<meta property="og:updated_time" content="2018-05-26T08:49:06.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dl表格">
-<meta name="twitter:description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="twitter:title" content="css选择器">
+<meta name="twitter:description" content="选择器">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/dl表格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/css选择器/"/>
 
 
 
 
 
-  <title>dl表格 | BenPJJ's Blog</title>
+  <title>css选择器 | BenPJJ's Blog</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/dl表格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/css选择器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PJJ">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">dl表格</h1>
+          <h1 class="post-title" itemprop="name headline">css选择器</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T12:47:26+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T16:06:21+08:00">
+                2018-05-26
               </time>
             
 
@@ -316,9 +316,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/18/dl表格/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/26/css选择器/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/18/dl表格/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/26/css选择器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,11 +351,13 @@
       
 
       
-        <h1 id="html-dl-dt-dd标签元素语法结构与使用"><a href="#html-dl-dt-dd标签元素语法结构与使用" class="headerlink" title="html dl dt dd标签元素语法结构与使用"></a>html dl dt dd标签元素语法结构与使用</h1><a id="more"></a>
-<p>1,语法</p>
-<h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">    &lt;dt&gt;列表标题&lt;/dt&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><p><dl> <dt> <dd>是一组合标签,使用了dt dd最外层就必须使用dl包裹。</dd></dt></dl></p>
-
+        <h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><a id="more"></a>
+<p>无非分两种：<br>1,标签选择器（*是特殊情况），可但标签，也可上下文多标签；<br>2,属性选择器（id和class都是属性，特殊的属性）；</p>
+<h1 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h1><p>1,多标签</p>
+<h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div p&#123;&#125;选择一个祖先的所有子孙节点</span><br><span class="line">div &gt; p&#123;&#125;选择一个父元素的所有直属节点</span><br><span class="line">li + li&#123;&#125;选择某一个元素紧挨着的兄弟节点</span><br><span class="line">span ~ a&#123;&#125;选择某一个元素的所有同胞节点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">运用</span><br><span class="line">给菜单栏之间加下划线，以前的做法(给所用的li设，在指定最后的去掉)</span><br><span class="line">新用法：</span><br><span class="line">ul li+li&#123;</span><br><span class="line">    border-top: 1px solid blue;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p>css选择器是根据html节点的特性来设置的</p>
+<h4 id="两种方式："><a href="#两种方式：" class="headerlink" title="两种方式："></a>两种方式：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img[title]&#123;&#125;只通过属性名选择</span><br><span class="line">input[<span class="built_in">type</span>=<span class="string">"button"</span>]&#123;&#125;通过属性名和属性值选择</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
     
@@ -379,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/es5(04)/" rel="next" title="ES5(04)">
-                <i class="fa fa-chevron-left"></i> ES5(04)
+              <a href="/2018/05/26/css样式来源和层叠机制/" rel="next" title="css样式来源和层叠机制">
+                <i class="fa fa-chevron-left"></i> css样式来源和层叠机制
               </a>
             
           </div>
@@ -388,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/18/css权重/" rel="prev" title="css选择器权重">
-                css选择器权重 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html-dl-dt-dd标签元素语法结构与使用"><span class="nav-number">1.</span> <span class="nav-text">html dl dt dd标签元素语法结构与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如："><span class="nav-number">1.0.0.1.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#选择器"><span class="nav-number">1.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签选择器"><span class="nav-number">2.</span> <span class="nav-text">标签选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性选择器"><span class="nav-number">3.</span> <span class="nav-text">属性选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两种方式："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">两种方式：</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -705,9 +703,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/05/18/dl表格/';
-          this.page.identifier = '2018/05/18/dl表格/';
-          this.page.title = 'dl表格';
+          this.page.url = 'http://yoursite.com/2018/05/26/css选择器/';
+          this.page.identifier = '2018/05/26/css选择器/';
+          this.page.title = 'css选择器';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://benpjj.disqus.com/embed.js';

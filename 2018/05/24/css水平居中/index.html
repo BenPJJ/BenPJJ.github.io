@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="description" content="css水平居中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dl表格">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/dl表格/index.html">
+<meta property="og:title" content="css水平居中">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/css水平居中/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="html dl dt dd标签元素语法结构与使用">
+<meta property="og:description" content="css水平居中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T05:35:09.060Z">
+<meta property="og:updated_time" content="2018-05-25T09:56:13.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dl表格">
-<meta name="twitter:description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="twitter:title" content="css水平居中">
+<meta name="twitter:description" content="css水平居中">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/dl表格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/css水平居中/"/>
 
 
 
 
 
-  <title>dl表格 | BenPJJ's Blog</title>
+  <title>css水平居中 | BenPJJ's Blog</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/dl表格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/css水平居中/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PJJ">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">dl表格</h1>
+          <h1 class="post-title" itemprop="name headline">css水平居中</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T12:47:26+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T12:42:50+08:00">
+                2018-05-24
               </time>
             
 
@@ -316,9 +316,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/18/dl表格/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/24/css水平居中/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/18/dl表格/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/24/css水平居中/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,10 +351,19 @@
       
 
       
-        <h1 id="html-dl-dt-dd标签元素语法结构与使用"><a href="#html-dl-dt-dd标签元素语法结构与使用" class="headerlink" title="html dl dt dd标签元素语法结构与使用"></a>html dl dt dd标签元素语法结构与使用</h1><a id="more"></a>
-<p>1,语法</p>
-<h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">    &lt;dt&gt;列表标题&lt;/dt&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><p><dl> <dt> <dd>是一组合标签,使用了dt dd最外层就必须使用dl包裹。</dd></dt></dl></p>
+        <h1 id="css水平居中"><a href="#css水平居中" class="headerlink" title="css水平居中"></a>css水平居中</h1><a id="more"></a>
+<p>1,margin+width<br>定义一个宽度，然后配合margin的左右值为’auto’</p>
+<p>优点：实现方法简单易懂，浏览器兼容性强；</p>
+<p>缺点：扩展性差，无法自适应未知项情况。</p>
+<p>2,inline-block<br>要在元素的父容器中设置text-align的属性为“center”,然后在设置inline-block</p>
+<p>优点：简单易懂，扩展性强；</p>
+<p>缺点：需要额外处理inline-block的浏览器兼容性。</p>
+<p>3,浮动<br>优点：兼容性强，扩展性强；</p>
+<p>缺点：实现原理较复杂。</p>
+<p>4,绝对定位<br>优点：扩展性强，兼容性强;</p>
+<p>缺点：理解性难。</p>
+<p>5,CSS3的flex</p>
+<p>6,CSS3的fit-content</p>
 
       
     </div>
@@ -379,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/es5(04)/" rel="next" title="ES5(04)">
-                <i class="fa fa-chevron-left"></i> ES5(04)
+              <a href="/2018/05/24/css知多少/" rel="next" title="css知多少">
+                <i class="fa fa-chevron-left"></i> css知多少
               </a>
             
           </div>
@@ -389,8 +398,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/18/css权重/" rel="prev" title="css选择器权重">
-                css选择器权重 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/24/js object属性获取方式/" rel="prev" title="js object的属性获取方式">
+                js object的属性获取方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -515,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html-dl-dt-dd标签元素语法结构与使用"><span class="nav-number">1.</span> <span class="nav-text">html dl dt dd标签元素语法结构与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如："><span class="nav-number">1.0.0.1.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css水平居中"><span class="nav-number">1.</span> <span class="nav-text">css水平居中</span></a></li></ol></div>
             
 
           </div>
@@ -705,9 +714,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/05/18/dl表格/';
-          this.page.identifier = '2018/05/18/dl表格/';
-          this.page.title = 'dl表格';
+          this.page.url = 'http://yoursite.com/2018/05/24/css水平居中/';
+          this.page.identifier = '2018/05/24/css水平居中/';
+          this.page.title = 'css水平居中';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://benpjj.disqus.com/embed.js';

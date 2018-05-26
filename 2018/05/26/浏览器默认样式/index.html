@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="description" content="1,理念上的转变">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dl表格">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/dl表格/index.html">
+<meta property="og:title" content="浏览器默认样式">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/浏览器默认样式/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="html dl dt dd标签元素语法结构与使用">
+<meta property="og:description" content="1,理念上的转变">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T05:35:09.060Z">
+<meta property="og:updated_time" content="2018-05-26T07:37:38.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dl表格">
-<meta name="twitter:description" content="html dl dt dd标签元素语法结构与使用">
+<meta name="twitter:title" content="浏览器默认样式">
+<meta name="twitter:description" content="1,理念上的转变">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/dl表格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/浏览器默认样式/"/>
 
 
 
 
 
-  <title>dl表格 | BenPJJ's Blog</title>
+  <title>浏览器默认样式 | BenPJJ's Blog</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/dl表格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/浏览器默认样式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PJJ">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">dl表格</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器默认样式</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T12:47:26+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T11:10:17+08:00">
+                2018-05-26
               </time>
             
 
@@ -316,9 +316,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/18/dl表格/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/26/浏览器默认样式/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/18/dl表格/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/26/浏览器默认样式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,11 +351,23 @@
       
 
       
-        <h1 id="html-dl-dt-dd标签元素语法结构与使用"><a href="#html-dl-dt-dd标签元素语法结构与使用" class="headerlink" title="html dl dt dd标签元素语法结构与使用"></a>html dl dt dd标签元素语法结构与使用</h1><a id="more"></a>
-<p>1,语法</p>
-<h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">    &lt;dt&gt;列表标题&lt;/dt&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    &lt;dd&gt;列表内容&lt;/dd&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><p><dl> <dt> <dd>是一组合标签,使用了dt dd最外层就必须使用dl包裹。</dd></dt></dl></p>
-
+        <h1 id="1-理念上的转变"><a href="#1-理念上的转变" class="headerlink" title="1,理念上的转变"></a>1,理念上的转变</h1><a id="more"></a>
+<p>浏览器加载了html之后只为一件东西——<strong>dom树<strong>，浏览器把html变为dom树结构，就完成了对html的结构化。至于后来对视图的渲染，p是block、br换行，那是整合了css之后的事情。而浏览器整合css又是另一个路线，和解析html是分开的。这里的“css”就包含了浏览器默认样式。</strong></strong></p>
+<p>一句话，浏览器将载入的html变为dom树，但是此时没有任何显示样式。所以显示的样式，都是css定义的，浏览器只会通过css来渲染视图样式。</p>
+<h1 id="2-block元素"><a href="#2-block元素" class="headerlink" title="2,block元素"></a>2,block元素</h1><p>有：html,address,<br>    blockquote,<br>    body,dd,div,<br>    dl,dt,fieldset,form,<br>    frame,frameset,<br>    h1-h6,<br>    noframes,<br>    ol,p,ul,center,<br>    dir,hr,menu,pre<br>没有设置block的元素，默认为inline显示。</p>
+<p>不要再说div天生就是block——这句话应该换成：浏览器默认样式天生规定了div是block——所以才导致了div是block。<br>是默认样式规定的，不是浏览器的内核规定的。</p>
+<h1 id="3-display-list-item"><a href="#3-display-list-item" class="headerlink" title="3,display: list-item"></a>3,display: list-item</h1><h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div style=<span class="string">"border: 1px solid #f0f0f0;padding: 5px"</span>&gt;</span><br><span class="line">    &lt;span style=<span class="string">"display: list-item;"</span>&gt;100&lt;/span&gt;</span><br><span class="line">    &lt;span style=<span class="string">"display: list-item"</span>&gt;200&lt;/span&gt;</span><br><span class="line">    &lt;span style=<span class="string">"display: list-item"</span>&gt;300&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>ul-li为什么会默认显示成那种样子？——list-item才是“罪魁祸首”。</p>
+<h1 id="4-diplay-table"><a href="#4-diplay-table" class="headerlink" title="4,diplay:table"></a>4,diplay:table</h1><p><table>和<div>在容器尺寸上最大区别是什么（只是容器尺寸，不考虑内容区别）？<br>div宽度和父容器相同，table宽度根据内容而定</div></table></p>
+<h1 id="5-display-table-cell"><a href="#5-display-table-cell" class="headerlink" title="5,display: table-cell"></a>5,display: table-cell</h1><p>多列布局,传统模式下大家都使用float来解决这一问题，但是float写出来的东西代码复杂，宽度调整不灵活，浏览器兼容性有问题。所以才有了新方案——table-cell，注意，IE6、7不行！</p>
+<h1 id="6-body样式"><a href="#6-body样式" class="headerlink" title="6,body样式"></a>6,body样式</h1><p>默认body{margin:8px;line-height:1.12}<br>这里的line-height: 1.12是一个相对值，即是文字高度的1.12倍。</p>
+<h1 id="7-em和px"><a href="#7-em和px" class="headerlink" title="7,em和px"></a>7,em和px</h1><p>em是一个浏览器识别的长度单位，但是它不是绝对的、固定的，而是相对的。<br>浏览器默认情况下令1em === 16px。</p>
+<p>px是一个绝对的长度单位制，它永远不会改变。</p>
+<h1 id="8-粗体和斜体"><a href="#8-粗体和斜体" class="headerlink" title="8,粗体和斜体"></a>8,粗体和斜体</h1><h4 id="默认："><a href="#默认：" class="headerlink" title="默认："></a>默认：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">h5&#123;font-size: 0.83em;margin: 1.5em 0;&#125;</span><br><span class="line">h6&#123;font-size: 0.75em;margin: 1.67em 0;&#125;</span><br><span class="line"></span><br><span class="line">h1,h2,h3,h4,h5,h6,b</span><br><span class="line">strong&#123;font-weight: bolder&#125;</span><br><span class="line"></span><br><span class="line">blockquote&#123;margin-left:40px;margin-right: 40px;&#125;</span><br><span class="line"></span><br><span class="line">i,cite,em,var,address&#123;font-style: italic&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p><b>和<strong>有啥区别？<br><b>为了加粗而加粗(被css(font-weight:bold;)取代了)，<strong>为了标明重点而加粗(更加偏向于语义化)。</strong></b></strong></b></p>
+<p><i>和<em>有啥区别？<br><em>单纯斜体,偏强调,<i>斜体，强调内容,(现在更多的流行用来放图标，没有实际意义搜索引擎更好抓取)</i></em></em></i></p>
+<h1 id="9-inline-block"><a href="#9-inline-block" class="headerlink" title="9,inline-block"></a>9,inline-block</h1><h4 id="默认：-1"><a href="#默认：-1" class="headerlink" title="默认："></a>默认：</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button,textarea,input,object,select&#123;display:inline-block;&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
     
@@ -379,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/es5(04)/" rel="next" title="ES5(04)">
-                <i class="fa fa-chevron-left"></i> ES5(04)
+              <a href="/2018/05/26/css(float)/" rel="next" title="css-Float">
+                <i class="fa fa-chevron-left"></i> css-Float
               </a>
             
           </div>
@@ -389,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/18/css权重/" rel="prev" title="css选择器权重">
-                css选择器权重 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/26/css样式来源和层叠机制/" rel="prev" title="css样式来源和层叠机制">
+                css样式来源和层叠机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -515,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html-dl-dt-dd标签元素语法结构与使用"><span class="nav-number">1.</span> <span class="nav-text">html dl dt dd标签元素语法结构与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如："><span class="nav-number">1.0.0.1.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-理念上的转变"><span class="nav-number">1.</span> <span class="nav-text">1,理念上的转变</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-block元素"><span class="nav-number">2.</span> <span class="nav-text">2,block元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-display-list-item"><span class="nav-number">3.</span> <span class="nav-text">3,display: list-item</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-diplay-table"><span class="nav-number">4.</span> <span class="nav-text">4,diplay:table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-display-table-cell"><span class="nav-number">5.</span> <span class="nav-text">5,display: table-cell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-body样式"><span class="nav-number">6.</span> <span class="nav-text">6,body样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-em和px"><span class="nav-number">7.</span> <span class="nav-text">7,em和px</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-粗体和斜体"><span class="nav-number">8.</span> <span class="nav-text">8,粗体和斜体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认："><span class="nav-number">8.0.0.1.</span> <span class="nav-text">默认：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-inline-block"><span class="nav-number">9.</span> <span class="nav-text">9,inline-block</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认：-1"><span class="nav-number">9.0.0.1.</span> <span class="nav-text">默认：</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -705,9 +717,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/05/18/dl表格/';
-          this.page.identifier = '2018/05/18/dl表格/';
-          this.page.title = 'dl表格';
+          this.page.url = 'http://yoursite.com/2018/05/26/浏览器默认样式/';
+          this.page.identifier = '2018/05/26/浏览器默认样式/';
+          this.page.title = '浏览器默认样式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://benpjj.disqus.com/embed.js';

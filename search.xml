@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css选择器]]></title>
+    <url>%2F2018%2F05%2F26%2Fcss%E9%80%89%E6%8B%A9%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[选择器 无非分两种：1,标签选择器（*是特殊情况），可但标签，也可上下文多标签；2,属性选择器（id和class都是属性，特殊的属性）； 标签选择器1,多标签 例如：123456789101112div p&#123;&#125;选择一个祖先的所有子孙节点div &gt; p&#123;&#125;选择一个父元素的所有直属节点li + li&#123;&#125;选择某一个元素紧挨着的兄弟节点span ~ a&#123;&#125;选择某一个元素的所有同胞节点运用给菜单栏之间加下划线，以前的做法(给所用的li设，在指定最后的去掉)新用法：ul li+li&#123; border-top: 1px solid blue; &#125; 属性选择器css选择器是根据html节点的特性来设置的 两种方式：12img[title]&#123;&#125;只通过属性名选择input[type="button"]&#123;&#125;通过属性名和属性值选择]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css样式来源和层叠机制]]></title>
+    <url>%2F2018%2F05%2F26%2Fcss%E6%A0%B7%E5%BC%8F%E6%9D%A5%E6%BA%90%E5%92%8C%E5%B1%82%E5%8F%A0%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[1,“层叠”的概念 层叠是CSS的核心机制 例如：1234567891011121314151617181920212223242526272829&lt;link rel="stylesheet" type="text/css" href="css/css1.css"&gt;&lt;style&gt; p&#123; color: blue; &#125; span&#123; color: blue; &#125;&lt;/style&gt;&lt;body&gt; &lt;p&gt;这是一个p&lt;/p&gt; &lt;span&gt;这是一个span&lt;/span&gt;&lt;/body&gt;css1.css&#123; p&#123; color: red; font-weight: bold; &#125; span&#123; color: red !important; &#125;&#125;最后显示的效果：p blue span red 知识点：!important!important为开发者提供了一个增加样式权重的方法。应当注意的是!important是对整条样式的声明，包括这个样式的属性和属性值。新写法：span{color: red !important;color :blue;} 2,层叠的规则覆盖的默认规则是后者覆盖前者，但是又一个特殊情况——!important。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[浏览器默认样式]]></title>
+    <url>%2F2018%2F05%2F26%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[1,理念上的转变 浏览器加载了html之后只为一件东西——dom树，浏览器把html变为dom树结构，就完成了对html的结构化。至于后来对视图的渲染，p是block、br换行，那是整合了css之后的事情。而浏览器整合css又是另一个路线，和解析html是分开的。这里的“css”就包含了浏览器默认样式。 一句话，浏览器将载入的html变为dom树，但是此时没有任何显示样式。所以显示的样式，都是css定义的，浏览器只会通过css来渲染视图样式。 2,block元素有：html,address, blockquote, body,dd,div, dl,dt,fieldset,form, frame,frameset, h1-h6, noframes, ol,p,ul,center, dir,hr,menu,pre没有设置block的元素，默认为inline显示。 不要再说div天生就是block——这句话应该换成：浏览器默认样式天生规定了div是block——所以才导致了div是block。是默认样式规定的，不是浏览器的内核规定的。 3,display: list-item例如：12345 &lt;div style="border: 1px solid #f0f0f0;padding: 5px"&gt; &lt;span style="display: list-item;"&gt;100&lt;/span&gt; &lt;span style="display: list-item"&gt;200&lt;/span&gt; &lt;span style="display: list-item"&gt;300&lt;/span&gt;&lt;/div&gt; ul-li为什么会默认显示成那种样子？——list-item才是“罪魁祸首”。 4,diplay:table和在容器尺寸上最大区别是什么（只是容器尺寸，不考虑内容区别）？div宽度和父容器相同，table宽度根据内容而定 5,display: table-cell多列布局,传统模式下大家都使用float来解决这一问题，但是float写出来的东西代码复杂，宽度调整不灵活，浏览器兼容性有问题。所以才有了新方案——table-cell，注意，IE6、7不行！ 6,body样式默认body{margin:8px;line-height:1.12}这里的line-height: 1.12是一个相对值，即是文字高度的1.12倍。 7,em和pxem是一个浏览器识别的长度单位，但是它不是绝对的、固定的，而是相对的。浏览器默认情况下令1em === 16px。 px是一个绝对的长度单位制，它永远不会改变。 8,粗体和斜体默认：123456789h5&#123;font-size: 0.83em;margin: 1.5em 0;&#125;h6&#123;font-size: 0.75em;margin: 1.67em 0;&#125;h1,h2,h3,h4,h5,h6,bstrong&#123;font-weight: bolder&#125;blockquote&#123;margin-left:40px;margin-right: 40px;&#125;i,cite,em,var,address&#123;font-style: italic&#125; 和有啥区别？为了加粗而加粗(被css(font-weight:bold;)取代了)，为了标明重点而加粗(更加偏向于语义化)。 和有啥区别？单纯斜体,偏强调,斜体，强调内容,(现在更多的流行用来放图标，没有实际意义搜索引擎更好抓取) 9,inline-block默认：1button,textarea,input,object,select&#123;display:inline-block;&#125;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css-Float]]></title>
+    <url>%2F2018%2F05%2F26%2Fcss(float)%2F</url>
+    <content type="text"><![CDATA[误解和“误用” 绝大多数用float都是为了——横向排版、或者多列布局。这样使用确实是对float的一种误解和“误用”，因为float被设计出来的初衷是用于——文字环绕效果。 破坏性float的“破坏性”——float破坏了父标签的原本结构，使得父标签出现了坍塌现象。导致这一现象的最根本原因在于：被设置了float的元素会脱离文档流。(通俗点就是被设置的元素不占空间了) 解决方法1234567div:after&#123; content:""; height:0; display:block; clear:both; visibility:hidden;&#125; 例如：1234567&lt;div style="border:1px solid blue;padding:5px;"&gt; &lt;img src="img.png"/&gt;&lt;/div&gt;对比 &lt;div style="border:1px solid blue;padding:5px"&gt; &lt;img src="img.png" style="float:left;"/&gt;&lt;/div&gt; 包裹性清空格为什么float适合用于网页排版（俗称“砌砖头”）？就是因为float排版出来的网页严丝合缝，中间连个苍蝇都飞不进去。 “清空格”这一特性的根本原因是由于float会导致节点脱离文档流结构。它都不属于文档流结构了，那么它身边的什么换行、空格就都和它没关系的，它就尽量的往一边去靠拢，能靠多近就靠多近，这就是清空格的本质。 解决float一系列问题清除float先介绍两个比较简单，但是不常用的解决方法： 1,为父元素添加overflow:hidden2,浮动父元素 3,第三种方法也不是很常用,clear:both,通过在所有浮动元素下方添加一个clear:both的元素，可以消除float的破坏性。(如：在浮动元素下加上,俗称骨灰级解决方法) 缺陷：改变了HTML结构 4,第四种方法是大家最需要掌握的,也是我推荐的，也是bootstrap正在用的——clearfix用法：定义一个.clearfix类，然后对float元素的父元素应用这一样式即可 12345678910.clearfix:after&#123; content:&apos;.&apos;; height:0; display:block; clear:both; visibility:hidden;&#125;.clearfix&#123; *zoom:1;//兼容IE低版本 &#125; 合理的使用float布局网页float做网页布局也是有许多技巧的，准确的应用会提高网页的灵活性。 1,三列布局三列布局(很明显的左、中、右) 布局方案1234567891011&lt;div class="clearfix" style="text-align:center;"&gt; &lt;div style="float:left;"&gt; 左侧内容(宽度可以不设置，因为float具有包裹性) &lt;/div&gt; &lt;div style="float:right;"&gt; 右侧内容(宽度可以不设置，因为float具有包裹性) &lt;/div&gt; &lt;div&gt; 中间内容(当页面宽度发生变化时,中间内容宽度会随之调整) &lt;/div&gt;&lt;/div&gt; 2,两列布局两列布局(分为左、右结构) 布局方案123456&lt;div style="float:left;"&gt; 左侧内容(宽度可以不设置，因为float具有包裹性)&lt;/div&gt;&lt;div style="margin-left:100px;"&gt; 右侧内容&lt;/div&gt; 3,BootStrap的栅格系统]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css-Display]]></title>
+    <url>%2F2018%2F05%2F26%2Fcss(display)%2F</url>
+    <content type="text"><![CDATA[网页的所有元素，除了“块”就是“流”，而且“流”都是包含在“块”里面的（最外层的body就是一个“块”）。 常用的属性有：none、block、inline、inline-block、inherit，其中inherit是继承父元素的样式。 特殊：list-item：通过它可以模拟li列表样式；table：也是一个“块”，但和block相比，table具有包裹性；table-cell：最新的多列布局解决方案； 包裹性：12345包裹性：元素的宽度会收缩到与内容宽度一致。拥有包裹性的元素：float浮动的元素position为absolute或fixed的元素display为inline-block, table-cell, table-caption, inline-flex的元素 1,inlineinline的标签，你设置宽度和高度是无效的 如何把inline元素转换成“块”元素？12341,一般想到的都是设置display:block;2,也可以display:table3,设置float浮动元素4,设置absolute/fixed 2,block一个元素设置了block，它就必须遵循盒子模型的规则。 3,inline-block外部看来是“流”，但是自身确实一个“块”。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css3盒子模型]]></title>
+    <url>%2F2018%2F05%2F25%2Fcss3%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[1,什么是盒子模型 一种思维模型,内容(content)、填充(padding)、边框(border)、边界(margin)CSS盒子模式都具备这些属性。 2,盒子的宽度整个盒子的宽度是：（内容宽度 + border宽度 + padding宽度 + margin宽度）之和。设置的宽度都是内容宽度，不是整个盒子的宽度。 3,盒子模型设置宽度例如：123456&lt;div style="padding:10px;border:1px solid blue;margin:10px;width:300px;box-sizing:border-box;"&gt; 随便写点东西，装修盒子。&lt;/div&gt;这是内容的宽度等于contant=300-width-border*2-padding*2;而盒子的宽度等于 300 建议以后写样式：*{ margin: 0; padding: 0; box-sizing: border-box;} 4,纵向margin的重叠纵向的margin是会重叠的，大的会把小的“吃掉” 5,用div画“三角”例如：1234567div&#123; border: 10px solid; border-color: #333 transparent transparent transparent; width: 0;&#125;&lt;div&gt;&lt;/div&gt;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[js object的属性获取方式]]></title>
+    <url>%2F2018%2F05%2F24%2Fjs%20object%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[方式点object.name 括号object[“name”] 区别中括号法可以用变量作为属性名,而点方法不可以;中括号法可以用数字作为属性名,而点语法不可以;中括号法可以使用js的关键字和保留字作为属性名,而点语法不可以。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css水平居中]]></title>
+    <url>%2F2018%2F05%2F24%2Fcss%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[css水平居中 1,margin+width定义一个宽度，然后配合margin的左右值为’auto’ 优点：实现方法简单易懂，浏览器兼容性强； 缺点：扩展性差，无法自适应未知项情况。 2,inline-block要在元素的父容器中设置text-align的属性为“center”,然后在设置inline-block 优点：简单易懂，扩展性强； 缺点：需要额外处理inline-block的浏览器兼容性。 3,浮动优点：兼容性强，扩展性强； 缺点：实现原理较复杂。 4,绝对定位优点：扩展性强，兼容性强; 缺点：理解性难。 5,CSS3的flex 6,CSS3的fit-content]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css知多少]]></title>
+    <url>%2F2018%2F05%2F24%2Fcss%E7%9F%A5%E5%A4%9A%E5%B0%91%2F</url>
+    <content type="text"><![CDATA[问题 1,有些浏览器不完全支持css3，现在可以用哪个工具去检测浏览器是否支持，以及支持哪些项？ 解答：1234modernizr modernizr是一个 JavaScript 库，用于检测用户浏览器的 HTML5 与 CSS3 特性。工作原理：Modernizr 会在页面加载后立即检测特性；然后创建一个包含检测结果的 JavaScript 对象，同时在 html 元素加入方便你调整 CSS 的 class 名。 2,是否用过@import？ 解答：1234567引入CSS的方法有两种，一种是@import，一种是link @import url('地址');&lt;link href="地址" rel="stylesheet" type="text/css"/&gt;现在绝大部分的网站都采用后一种link方式，原因在于@import先加载HTML，后加载CSSlink先加载CSS，后加载HTML。所以前者加载网页会出现令浏览者以外的格式，后者则是带格式的加载网页。 3,display的block\inline\inline-block的区别 解答：1234567block 块级元素,自带换行符 可以设置宽高、margin、padding block元素宽度自动填满其父元素宽度,即使设置了宽,仍然会独占一行inline 行内元素,多个会自动排列一行 设置宽高无效 margin、padding水平方向有效，垂直方向无效inline-block 有宽高的水平排列 4,是否用过inline-block，IE6、7如何兼容？ 解答：1234567两种方法：1、先使用display:inline-block属性触发块元素，然后再定义display:inline，让块元素呈递为内联对象（两个display 要先后放在两个CSS声明中才有效果，这是IE的一个经典bug，如果先定义了display:inline-block，然后再将display设回 inline或block，layout不会消失）div01&#123;display:inline-block;&#125;div02&#123;display:inline-block;&#125;div01,div02&#123;*display:inline;&#125;2、直接让块元素设置为内联对象呈递（设置属性display:inline），然后触发块元素的layoutdiv&#123;display:inline-block;_zoom:1;*display:inline;&#125;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[正则表达式]]></title>
+    <url>%2F2018%2F05%2F23%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 例如1234^[0-9]+abc$^ 为匹配输入字符串的开始位置[0-9]+匹配多个数字， [0-9] 匹配单个数字，+ 匹配一个或者多个。abc$匹配字母 abc 并以 abc 结尾，$ 为匹配输入字符串的结束位置。 普通字符普通字符包括没有显式指定为元字符的所有可打印和不可打印字符。这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。 特殊字符例如1234567891011$ 匹配输入字符串的结尾位置。() 标记一个子表达式的开始和结束位置。* 匹配前面的子表达式零次或多次。+ 匹配前面的子表达式一次或多次。. 匹配除换行符 \n 之外的任何单字符。[ 标记一个中括号表达式的开始。? 匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。\ 将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。^ 匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。&#123; 标记限定符表达式的开始。| 指明两项之间的一个选择。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[window.location对象]]></title>
+    <url>%2F2018%2F05%2F22%2Fes5(5)%2F</url>
+    <content type="text"><![CDATA[属性 hash 从井号(#)开始host 主机名和当前URL的端口号hostname 当前URL的主机名href 完整的URLpathname 当前URL路径部分port 当前URL的端口号protocol 当前URL的协议search 从问号(?)开始的URL]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[addClass和removeClass区别(jq)]]></title>
+    <url>%2F2018%2F05%2F22%2Fjq(addClass%26removeClass)%2F</url>
+    <content type="text"><![CDATA[addClass(class|fn) 为每个匹配的元素添加指定的类名。 参数class(类型string) 一个或多个要添加到元素中的CSS类名，请用空格分开function(index, class)(类型function) 此函数必须返回一个或多个空格分隔的class名。接受两个参数，index参数为对象在这个集合中的索引值，class参数为这个对象原先的class属性值。 例如：12345$('p').addClass('selected');$('p').addClass('selected selected');$('p').addClass(function()&#123; return 'item' +$(this).index();&#125;); removeClass(class|fn)从所有匹配的元素中删除全部或者指定的类。]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F05%2F22%2Ftest%2F</url>
+    <content type="text"><![CDATA[Document div{ border: 10px solid; border-color: #333 transparent #336 #300; width: 0; }]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[flex布局]]></title>
+    <url>%2F2018%2F05%2F22%2Fflex%E5%B8%83%E5%B1%80%2F</url>
+    <content type="text"><![CDATA[Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。 任何一个容器都可以指定为 Flex 布局。 例如：123.box&#123; display: flex;&#125; 注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[css元素]]></title>
     <url>%2F2018%2F05%2F18%2Fcss%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%2F</url>
     <content type="text"><![CDATA[html中元素分为行内和块级元素 行内元素指的是书写完成后不会自动换行，并且元素没有宽和高。 块级元素写完后会自动换行，有宽高可以修改。 还有一种特殊的元素叫做行内块元素。 行内元素有：heda meat title lable span br a style em b i strong 块级元素有：body from select textarea h1-h6 html tablebutton hr p ol ul dl cnter div 行内块元素常见的有：img input td]]></content>
@@ -8,7 +78,7 @@
   <entry>
     <title><![CDATA[css选择器权重]]></title>
     <url>%2F2018%2F05%2F18%2Fcss%E6%9D%83%E9%87%8D%2F</url>
-    <content type="text"><![CDATA[CSS优先级权重计算法 例如：12345678910#id(100) &gt; .class(10) &gt; 标签选择符(1)细分标签内选择符(1000)&gt;ID选择符(100)&gt;Class选择符(10)&gt;元素选择符(1)标签内选择符:元素标签中定义的样式（Style属性）.class||伪类':active,:focus,:hover,:link,:visited,:first-child,:lang'||属性选择符'[title]'(10)标签||伪元素选择符':first-letter,:first-line,:before,:after'(1)通配符'*'(0)]]></content>
+    <content type="text"><![CDATA[CSS优先级权重计算法 例如：123456789101112#id(100) &gt; .class(10) &gt; 标签选择符(1)细分标签内选择符(1000)&gt;ID选择符(100)&gt;Class选择符(10)&gt;元素选择符(1)标签内选择符:元素标签中定义的样式（Style属性）.class||伪类':active,:focus,:hover,:link,:visited,:first-child,:lang'||属性选择符'[title]'(10)标签||伪元素选择符':first-letter,:first-line,:before,:after'(1)通配符'*'(0)!important优先级最高]]></content>
   </entry>
   <entry>
     <title><![CDATA[dl表格]]></title>
