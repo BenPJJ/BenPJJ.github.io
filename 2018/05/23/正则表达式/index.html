@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 例如1234^[0-9]+abc$^ 为匹配输入字符串的开始位置[0-9]+匹配多个数字， [0-9] 匹配单个数字，+ 匹配一个或者多个。abc$匹配字母 abc 并以 abc 结尾，$ 为匹配输入字符串的结束位置。 普通字符普通字符包括没有显式指定为元">
+<meta name="description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://yoursite.com/2018/05/23/正则表达式/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 例如1234^[0-9]+abc$^ 为匹配输入字符串的开始位置[0-9]+匹配多个数字， [0-9] 匹配单个数字，+ 匹配一个或者多个。abc$匹配字母 abc 并以 abc 结尾，$ 为匹配输入字符串的结束位置。 普通字符普通字符包括没有显式指定为元">
+<meta property="og:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T05:59:48.126Z">
+<meta property="og:updated_time" content="2018-05-29T03:36:24.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 例如1234^[0-9]+abc$^ 为匹配输入字符串的开始位置[0-9]+匹配多个数字， [0-9] 匹配单个数字，+ 匹配一个或者多个。abc$匹配字母 abc 并以 abc 结尾，$ 为匹配输入字符串的结束位置。 普通字符普通字符包括没有显式指定为元">
+<meta name="twitter:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。">
 
 
 
@@ -351,8 +351,7 @@
       
 
       
-        <a id="more"></a>
-<p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。</p>
+        <p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。<br><a id="more"></a></p>
 <h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">^[0-9]+abc$</span><br><span class="line">^ 为匹配输入字符串的开始位置</span><br><span class="line">[0-9]+匹配多个数字， [0-9] 匹配单个数字，+ 匹配一个或者多个。</span><br><span class="line">abc$匹配字母 abc 并以 abc 结尾，$ 为匹配输入字符串的结束位置。</span><br></pre></td></tr></table></figure>
 </code></pre><h1 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h1><p>普通字符包括没有显式指定为元字符的所有可打印和不可打印字符。这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。</p>
 <h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><h4 id="例如-1"><a href="#例如-1" class="headerlink" title="例如"></a>例如</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$   匹配输入字符串的结尾位置。</span><br><span class="line">()  标记一个子表达式的开始和结束位置。</span><br><span class="line">*   匹配前面的子表达式零次或多次。</span><br><span class="line">+   匹配前面的子表达式一次或多次。</span><br><span class="line">.   匹配除换行符 \n 之外的任何单字符。</span><br><span class="line">[   标记一个中括号表达式的开始。</span><br><span class="line">?   匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。</span><br><span class="line">\   将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。</span><br><span class="line">^   匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。</span><br><span class="line">&#123;   标记限定符表达式的开始。</span><br><span class="line">|   指明两项之间的一个选择。</span><br></pre></td></tr></table></figure>
@@ -479,7 +478,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
