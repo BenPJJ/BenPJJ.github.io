@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[V8引擎详解]]></title>
     <url>%2F2018%2F06%2F27%2FV8%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[编辑语言(2种) 编译型语言和解释型语言(解释型语言的执行速度是慢于编译型语言) 编译型语言:定义:在执行之前要先进行完全编译 解释型语言:定义:一边编译一边执行 JavaScript定义:是一种解释型脚本语言,支持动态类型、弱类型、基于原型的语言,内置支持类型 #![Image discription]]]></content>
+    <content type="text"><![CDATA[编辑语言(2种) 编译型语言和解释型语言(解释型语言的执行速度是慢于编译型语言) 编译型语言:定义:在执行之前要先进行完全编译 解释型语言:定义:一边编译一边执行 JavaScript定义:是一种解释型脚本语言,支持动态类型、弱类型、基于原型的语言,内置支持类型 特殊说明如何在.md文件中上传照片：步骤:1,在github上建一个仓库img-storage2,本地桌面github clone下需要的仓库3,在本地的img-storage里添加照片4,上传到github上(这里有个小插曲)这一步我出现问题(failed to sync this branch. You might need to open a shell and debug the state of this repo. )解决方法:右上角的设置图标,选择Open in git Shell,先用命令git pull拉去远程github上代码,再用git push把已经提交到本地的代码推送提交到远程github上即可5, 6,重大发现如何正常显示github链接上的图片https://github.com/BenPJJ/img-storage/blob/master/webkit.png把链接中的blob换成raw得到链接https://raw.githubusercontent.com/BenPJJ/img-storage/master/webkit.png]]></content>
   </entry>
   <entry>
     <title><![CDATA[移动端web布局适配方法]]></title>
