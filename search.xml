@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[V8引擎详解]]></title>
     <url>%2F2018%2F06%2F27%2FV8%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[编辑语言(2种) 编译型语言和解释型语言(解释型语言的执行速度是慢于编译型语言) 编译型语言:定义:在执行之前要先进行完全编译 解释型语言:定义:一边编译一边执行 JavaScript定义:是一种解释型脚本语言,支持动态类型、弱类型、基于原型的语言,内置支持类型 #![https://github.com/BenPJJ/img-storage/blob/master/webkit.png]]]></content>
+    <content type="text"><![CDATA[编辑语言(2种) 编译型语言和解释型语言(解释型语言的执行速度是慢于编译型语言) 编译型语言:定义:在执行之前要先进行完全编译 解释型语言:定义:一边编译一边执行 JavaScript定义:是一种解释型脚本语言,支持动态类型、弱类型、基于原型的语言,内置支持类型 #]]></content>
   </entry>
   <entry>
     <title><![CDATA[移动端web布局适配方法]]></title>
