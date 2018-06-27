@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一章 JavaScript简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级程序设计">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/JavaScript高级程序编程设计/index.html">
+<meta property="og:site_name" content="BenPJJ&#39;s Blog">
+<meta property="og:description" content="第一章 JavaScript简介">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-26T08:04:38.240Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript高级程序设计">
+<meta name="twitter:description" content="第一章 JavaScript简介">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/JavaScript高级程序编程设计/"/>
+
+
+
+
+
+  <title>JavaScript高级程序设计 | BenPJJ's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/benPJJ"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BenPJJ's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">personal notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/JavaScript高级程序编程设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PJJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BenPJJ's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript高级程序设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T10:01:03+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/11/JavaScript高级程序编程设计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/11/JavaScript高级程序编程设计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一章-JavaScript简介"><a href="#第一章-JavaScript简介" class="headerlink" title="第一章 JavaScript简介"></a>第一章 JavaScript简介</h1><a id="more"></a>
+<h2 id="javascript组成"><a href="#javascript组成" class="headerlink" title="javascript组成"></a>javascript组成</h2><p>javascript核心：ECMAScript(核心) DOM(文档对象模型) BOM(brower object document浏览器对象模型)</p>
+<p>ECMAScript: 提供核心语言功能<br>DOM: 提供访问和操作网页内容的方法和接口<br>BOM: 提供与浏览器交互的方法和接口</p>
+<h2 id="语言组成"><a href="#语言组成" class="headerlink" title="语言组成"></a>语言组成</h2><p>语法 类型 语句 关键字 保留字 操作符 对象</p>
+<h2 id="文档对象模型-DOM"><a href="#文档对象模型-DOM" class="headerlink" title="文档对象模型(DOM)"></a>文档对象模型(DOM)</h2><p>定义: 针对XML但经过扩展用于HTML的应用程序编程接口</p>
+<p>原理: DOM把整个页面映射为一个多层节点结构，借助DOM提供的API,轻松自如地删除、添加、替换或修改任何节点</p>
+<h2 id="浏览器对象模型-BOM"><a href="#浏览器对象模型-BOM" class="headerlink" title="浏览器对象模型(BOM)"></a>浏览器对象模型(BOM)</h2><p>定义: 控制浏览器显示的页面以外的部分,习惯上也把所有针对浏览器的JavaScript扩展算作BOM的一部分</p>
+<h4 id="例如"><a href="#例如" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1,弹出新浏览窗口</span><br><span class="line">2,移动、缩放和关闭浏览器窗口</span><br><span class="line">3,提供浏览器详细信息的navigator对象</span><br><span class="line">4,提供浏览器所加载页面的详细信息的location对象</span><br><span class="line">5,提供用户显示器分辨率详细信息的screen对象</span><br><span class="line">6,对cookies的支持</span><br><span class="line">7,像XMLHttpRequest 和 IE的ActiveXObject自定义对象</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="第二章-在HTML中使用JavaScript"><a href="#第二章-在HTML中使用JavaScript" class="headerlink" title="第二章 在HTML中使用JavaScript"></a>第二章 在HTML中使用JavaScript</h1><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a><script>元素</h2><p>向HTML页面中插入JavaScript的主要方法</p>
+<h4 id="属性-还有用的"><a href="#属性-还有用的" class="headerlink" title="属性(还有用的):"></a>属性(还有用的):</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: 编写代码使用的脚本语言的内容类型(MIME类型)</span><br><span class="line">src: 要执行代码的外部文件</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="标签的位置"><a href="#标签的位置" class="headerlink" title="标签的位置"></a><script>标签的位置</h2><p>1,惯例放在页面<head>元素中<br>产生的问题:在文档的<head>元素中包含所有JavaScript文件,意味着必须等到全部JavaScript代码全部都被下载、解析和执行完成以后,才能开始呈现页面的内容(浏览器在遇到<body>标签时才开始呈现内容)。<br>            对于需要很多JavaScript代码的页面来说,无疑会导致浏览器在呈现页面时出现明显的延迟,而延迟期间的浏览器窗口中将是一片空白。<br>解决方法:放在<body>元素后面</p>
+<h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>1,区分大小写</p>
+<p>2,标识符(变量、函数、属性的名字、函数的参数)</p>
+<h4 id="规则"><a href="#规则" class="headerlink" title="规则:"></a>规则:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">第一个字符可以是一个字母、下划线(_)、一个美元符号($)</span><br><span class="line">其他字符可以是字母、下划线、美元符号或数字</span><br><span class="line">惯例采用驼峰大小写格式,也就是第一个字母小写,剩下的每个有意义的单词的首字母大写</span><br><span class="line">不能把关键字、保留字、<span class="literal">true</span>、<span class="literal">false</span>和null用作标识符</span><br></pre></td></tr></table></figure>
+</code></pre><p>3,注释<br>//单行注释    </p>
+<p>/*<em>多行(块级)注释 </em>/</p>
+<p>4,严格模式(es5引入)<br>定义: 为JavaScript定义了一种不同的解析与执行模型</p>
+<h4 id="例如-1"><a href="#例如-1" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在整个脚本中启用,在顶部添加</span><br><span class="line"><span class="string">"use atrict"</span>;</span><br><span class="line"></span><br><span class="line">在函数内部启用</span><br><span class="line"><span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">	<span class="string">"use atrict"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>浏览器支持: IE10+、FF4+、Safari5.1+、O12+、Chrome</p>
+<p>5,关键字<br>break do instanceof typeof<br>case else new var<br>catch finally return void<br>continue for switch while<br>debugger(es5) function this with<br>default if throw<br>delete in try</p>
+<p>6,保留字(在js中还没有任何特定的用途)<br>abstract enum int short<br>boolean export insterface static<br>btye extends long super<br>char final native synchronized<br>class float package throws<br>const goto private transient<br>debugger implements protected volatile<br>double import public let(es5) yield(es5)</p>
+<p>es5把在非严格模式下运行时的保留字缩减为下列这些:<br>class enum extends super<br>const export import</p>
+<p>7,变量<br>ECMAScript的变量是松散类型,即可以用来保存任何类型的数据,变量仅仅是一个用来保存值的占位符</p>
+<p>8,数据类型<br>6种数据类型:number、string、boolean、undefined、null(5种基本数据类型),object</p>
+<p>9,typeof操作符<br>检查变量的数据类型,返回undefined(未定义)、boolean、string、number、object(对象或null)、function</p>
+<p>10,undefined类型<br>未初始化,无论在什么情况下都没有必要把一个变量的值显式地设置为undefined</p>
+<p>11,null类型<br>空对象指针<br>实际上,undefined值是派生自null值的,所以<br>null == undefined ; true<br>只要意在保存对象的变量还没有真正保存对象,就应该明确地让该变量保存null值</p>
+<p>12,boolean类型<br>转型函数Boolean()<br>可以对任何数据类型的值调用Boolean()函数,总会返回一个Boolean值,返回时true、false取决于要转换值的数据类型及其实际值</p>
+<p>13,number类型<br>NaN非数值(not a number)是一个特殊的数值,用于表示一个本来要返回数值的操作数未返回数值的情况(这样就不会抛出错误)</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1,任何涉及NaN的操作(如NaN/10)都会返回NaN</span><br><span class="line">2,NaN与任何值都不相等,包括NaN本身 </span><br><span class="line">NaN == NaN; <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</code></pre><p>isNaN()函数,可以确定参数(任何类型)是否’不是数值’<br>判断过程:isNaN()在接到一个值之后,会尝试将这个值(字符串’10’或Boolean)转换为数值返回false,不能被转换为数值的值都会返回true<br>isNaN(NaN) true<br>isNaN(10) false<br>isNaN(‘10’) false<br>isNaN(‘blue’) false<br>isNaN(true) false</p>
+<p>14,数值转换<br>Number()、parseInt()、parseFloat()都可以把非数值转换为数值</p>
+<h2 id="Number-转型函数"><a href="#Number-转型函数" class="headerlink" title="Number()转型函数"></a>Number()转型函数</h2><p>可以用于任何数据类型</p>
+<h4 id="规则-1"><a href="#规则-1" class="headerlink" title="规则:"></a>规则:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span>或<span class="literal">false</span>	1、0</span><br><span class="line">数字值	不变</span><br><span class="line">null	0</span><br><span class="line">undefined NaN</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="parseInt-、parseFloat"><a href="#parseInt-、parseFloat" class="headerlink" title="parseInt()、parseFloat()"></a>parseInt()、parseFloat()</h2><p>专门用于把字符串转换成数值</p>
+<h2 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h2><h4 id="规则-2"><a href="#规则-2" class="headerlink" title="规则:"></a>规则:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1,在转换字符串时,会忽略字符串前面的空格,直至找到第一个非空格字符</span><br><span class="line">2,如果第一个字符不是数字字符或负号,返回NaN</span><br></pre></td></tr></table></figure>
+</code></pre><p>15,string类型<br>转换为字符串<br>1,toString()<br>每个字符串都有一个toString()方法,除null和undefined值没有</p>
+<p>2,String()<br>任何类型的值都可以转换为字符串</p>
+<p>16,Object类型<br>Object的每个实例都具有下列属性和方法</p>
+<h4 id="例如-2"><a href="#例如-2" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Constructor 保存着用于创建当前对象的函数</span><br><span class="line">hasOwnProperty(propertyName) 用于检查给定的属性在当前对象实例中是否存在 </span><br><span class="line">isPrototypeOf(object) 用于检查传入的对象是否是另一个对象的原型</span><br><span class="line">propertyIsEnumerable(propertyName) 检查给定的属性是否能够使用<span class="keyword">for</span>-in语句</span><br><span class="line">toLocaleString() 返回对象的字符串,该字符串与执行环境的地区对应</span><br><span class="line">toString() 返回对象的字符串 </span><br><span class="line">valueOf() 返回对象的字符串、数值、布尔值</span><br></pre></td></tr></table></figure>
+</code></pre><p>17,操作符<br>定义:描述了一组用于操作数据值的操作符<br>有:算术、位、关系、相等操作符<br>特点:能够适用于很多值</p>
+<p>1,一元操作符<br>定义:只能操作一个值的操作符</p>
+<p>2,位操作符</p>
+<p>3,布尔操作符<br>有3个:非(!)、与(&amp;&amp;)、或(||)</p>
+<p>4,条件操作符</p>
+<p>18,语句(流控制语句)<br>定义:使用一或多个关键字来完成给定任务</p>
+<p>1,if语句<br>if(){}else{}</p>
+<p>2,do-while语句<br>是一种后测试循环语句,即只有在循环体中的代码执行之后,才会测试出口条件;换句话说,在对条件表达式求值之前,循环体内的代码至少会被执行一次</p>
+<p>3,while语句<br>前测试循环语句,也是说,在循环体内的代码被执行之前,就会对出口条件求值,循环体内的代码有可能永远不会被执行</p>
+<p>4,for语句</p>
+<p>5,for-in语句<br>一种精准的迭代语句,可以用来枚举对象的属性<br>(es5)如果要迭代的对象的变量值为null或undefined,不会执行循环体</p>
+<p>6,break 和 continue语句<br>break语句会立即退出循环,强制继续执行循环后面的语句</p>
+<p>continue语句会立即退出循环,但退出循环后会从循环的顶部继续执行</p>
+<p>7,with语句(淘汰了)<br>作用:将代码的作用域设置到一个特定的对象中</p>
+<h4 id="例如-3"><a href="#例如-3" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var qs = location.search.substring(1);</span><br><span class="line">var hostName = location.hostName;</span><br><span class="line">var url = location.href;</span><br><span class="line"></span><br><span class="line">改:</span><br><span class="line">with(location)&#123;</span><br><span class="line">	var qs = search.substring(1);</span><br><span class="line">	var hostName = hostName;</span><br><span class="line">	var url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>8,switch语句</p>
+<p>9,函数<br>任何函数在任何时候都可以通过return语句后跟要返回的值来实现返回值<br>位于return语句之后的任何代码都永远不会执行</p>
+<p>10,理解函数<br>es函数不介意传递进来多少个参数,也不在乎传进来参数是什么数据类型,<br>原因:es中的参数在内部是用一个数组来表示的,函数接收到的始终都是这个数组<br>实际上,在函数体内可以通过arguments对象来访问这个参数数组,从而获取传递给函数的每一个参数</p>
+<p>没有传递值的命名参数将自动被赋予undefined值</p>
+<p>11,没有重载<br>重载定义:可以为一个函数编写两个定义,只要这两个定义的签名(接受的参数的类型和数量)不同即可</p>
+<h1 id="第四章-变量、作用域和内存问题"><a href="#第四章-变量、作用域和内存问题" class="headerlink" title="第四章 变量、作用域和内存问题"></a>第四章 变量、作用域和内存问题</h1><h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>定义:基本类型值指简单的数据段;引用类型值指由多个值构成的对象</p>
+<p>5种基本数据类型是按值访问的,操作保存在变量中的实际的值</p>
+<p>引用类型值是保存在内存中的对象,JavaScript不允许直接访问内存中的位置,也就是不能直接操作对象的内存空间。实际上是在操作对象的引用而不是实际的对象</p>
+<h2 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h2><p>基本类型值是栈内存</p>
+<h4 id="例如-4"><a href="#例如-4" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 5;</span><br><span class="line">var num2 = num2;</span><br><span class="line">从一个变量向另一个变量复制基本类型的值,会创建这个值的一个副本</span><br></pre></td></tr></table></figure>
+</code></pre><p>引用类型值是堆内存</p>
+<h4 id="例如-5"><a href="#例如-5" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = new Object();</span><br><span class="line">var obj2 = obj1;</span><br><span class="line">obj1.name = <span class="string">"ben"</span>;</span><br><span class="line">alert(obj2.name); //<span class="string">"ben"</span></span><br><span class="line">从一个变量向另一个变量复制引用类型的值,复制的其实是指针,因此两个变量最终都指向同一个对象</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><p>typeof 可以测 字符串、数组、布尔值、undefined、(一个对象或null)object测基本类型</p>
+<p>instanceof 测引用类型</p>
+<h2 id="执行环境及作用域"><a href="#执行环境及作用域" class="headerlink" title="执行环境及作用域"></a>执行环境及作用域</h2><p>1,执行环境(也称作用域)<br>定义:变量或函数有权访问的其他数据,决定了它们各自的行为<br>每个执行环境都有一个与之关联的变量对象,环境中定义的所有变量和函数都保存在这个对象中</p>
+<p>全局执行环境被认为是window对象,因此所有全局变量和函数都是作为window对象的属性和方法创建的</p>
+<p>一般某个执行环境中的所有代码执行完毕后,该环境被销毁,保存在其中的所有变量和函数定义也随之销毁(全局直到应用程序退出(关闭网页、浏览器)时才会被销毁)</p>
+<p>机制:当执行流–&gt;进入一个函数时–&gt;函数的环境–&gt;就会被推入一个环境栈中–&gt;而在函数执行之后–&gt;栈将其环境弹出–&gt;把控制权返回给之前的执行环境</p>
+<p>2,作用域链<br>当代码在一个环境中执行时,会创建变量对象的一个作用域链</p>
+<p>作用域链用途:保证对执行环境有权访问的所有变量和函数的有序访问</p>
+<p>3,没有块级作用域<br>理解:由花括号封闭的代码块都有自己的作用域(用es的话来说就是有自己的执行环境)</p>
+<h4 id="例如-6"><a href="#例如-6" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">	var color = <span class="string">'blue'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(color); //<span class="string">'blue'</span></span><br><span class="line">如果是其他语言,<span class="keyword">if</span>语句执行完毕后被销毁,但在JavaScript中,<span class="keyword">if</span>语句中的变量声明会将变量添加到当前的执行环境(指全局环境)</span><br></pre></td></tr></table></figure>
+</code></pre><p>4,垃圾收集<br>JavaScript具有自动垃圾收集机制,也就是说,执行环境会负责管理代码执行过程中使用的内存</p>
+<p>原理:找出那些不在继续使用的变量,然后释放其占用的内存</p>
+<h1 id="第十章-DOM"><a href="#第十章-DOM" class="headerlink" title="第十章 DOM"></a>第十章 DOM</h1><h2 id="文档对象模型-DOM-1"><a href="#文档对象模型-DOM-1" class="headerlink" title="文档对象模型(DOM)"></a>文档对象模型(DOM)</h2><p>定义: 针对XML但经过扩展用于HTML的应用程序编程接口</p>
+<p>原理: DOM把整个页面映射为一个多层节点结构，借助DOM提供的API,轻松自如地删除、添加、替换或修改任何节点</p>
+<p>1,节点层次<br>定义:节点分为几种不同的类型,每种类型分别表示文档中不同的信息及标记,<br>      每个节点都拥有各自的特点、数据和方法,另外也与其他节点存在某种关系,<br>      节点之间的关系构成了层次,而所有页面标记则表现为一个以特定节点为跟节点的树形结构</p>
+<h1 id="第十三章-事件"><a href="#第十三章-事件" class="headerlink" title="第十三章 事件"></a>第十三章 事件</h1><p>定义:文档或浏览器窗口中发生的一些特定的交互瞬间</p>
+<p>JavaScript与HTML之间的交互式通过事件实现的</p>
+<p>1,事件流<br>描述:页面中接收事件的顺序</p>
+<p>事件冒泡<br>定义:事件开始时由最具体的元素(文档中嵌套层次最深的那个节点)接收,然后逐级向上传播到较为不具体的节点(文档)</p>
+<p>所有现代浏览器都支持事件冒泡</p>
+<h4 id="例如-7"><a href="#例如-7" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;Event&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=<span class="string">'myDiv'</span>&gt;Click Me&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">如何点击&lt;div&gt;元素,事件顺序传播:&lt;div&gt; --&gt; &lt;body&gt; --&gt; &lt;html&gt; --&gt; document --&gt; (window)IE9、ff、chrome会冒泡到window对象</span><br></pre></td></tr></table></figure>
+</code></pre><p>事件捕获<br>定义:不太具体的节点应该更早接收到事件,而最具体的节点应该最后接收到事件<br>IE9、ff、chrome支持事件捕获</p>
+<p>DOM事件流<br>定义:有三个阶段:事件捕获阶段 –&gt; 处于目标阶段 –&gt; 事件冒泡阶段</p>
+<p>2,事件处理程序(事件侦听器)<br>定义:响应某个事件的函数</p>
+<p>事件处理程序的名字以’on’开头</p>
+<p>事件处理程序的方式:<br>HTML事件处理程序</p>
+<h4 id="例如-8"><a href="#例如-8" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">'button'</span> value=<span class="string">'Click Me'</span> onclick=<span class="string">'showMessage()'</span>/&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>DOM0级事件处理程序:</p>
+<h4 id="例如-9"><a href="#例如-9" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(<span class="string">'myBtn'</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(<span class="string">'Clicked'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">删除事件方法:</span><br><span class="line">btn.onclick = null;</span><br></pre></td></tr></table></figure>
+</code></pre><p>DOM2级事件处理程序:</p>
+<h4 id="例如-10"><a href="#例如-10" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(<span class="string">'myBtn'</span>);</span><br><span class="line">btn.addEventListener = (<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(this.id);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">removeEventListener()移除</span><br><span class="line">btn.removeEventListener = (<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(this.id);</span><br><span class="line">&#125;,<span class="literal">false</span>);//没有用</span><br><span class="line">原因:第二个参数与传入addEventListener()中的那一个是完全不同的函数</span><br><span class="line"></span><br><span class="line">var btn = document.getElementById(<span class="string">'myBtn'</span>);</span><br><span class="line">var handler = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(this.id);</span><br><span class="line">&#125;;</span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>,handler,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">btn.removeEventListener(<span class="string">'click'</span>,handler,<span class="literal">false</span>);//有效</span><br></pre></td></tr></table></figure>
+</code></pre><p>大多数情况下,都是将事件处理程序添加到事件流的冒泡阶段,可以最大限度地兼容各种浏览器</p>
+<p>3,事件对象<br>在触发DOM上的某个事件时,会产生一个事件对象event</p>
+<p>在事件处理程序内部,对象this始终等于currentTarget(当前正在处理事件的那个元素)的值,而target(事件的目标)则只包含事件的实际目标</p>
+<p>在需要通过一个函数处理多个事件时,可以使用type属性</p>
+<p>只有在事件处理程序执行期间,event对象才会存在,一旦事件处理程序执行完成,event对象就会被销毁</p>
+<p>4,事件类型<br>UI事件:<br>定义:那些不一定与用户操作有关的事件<br>load:当页面完全加载后在window上面触发<br>unload:当页面完全卸载后在window上面触发<br>abort:当用户停止下载过程时<br>error:当发生JavaScript错误时在window上面触发<br>select:当用户选择文本框中的一或多个字符时触发<br>resize:当窗口或框架的大小变化时在window或框架上面触发<br>scroll:当用户滚动带滚动条的元素中的内容是,在该元素上面触发</p>
+<p>焦点事件:<br>blur:在元素失去焦点时触发<br>focus:在元素获得焦点时触发</p>
+<p>鼠标与滚轮事件(9种):<br>click:单击鼠标<br>dblclick:双击鼠标</p>
+<p>mouseenter:只有在鼠标指针穿过被选元素时才触发<br>mouseleave:只有在鼠标指针离开被选元素时才触发</p>
+<p>mousemove:鼠标指针在元素内部移动是重复地触发</p>
+<p>mouseover:不论鼠标指针穿过被选元素或其子元素,都会触发<br>mouseout:不论鼠标指针离开被选元素还是任何子元素,都会触发</p>
+<p>mousedown:按下任意鼠标按钮时触发<br>mouseup:用户释放鼠标按钮时触发</p>
+<p>上面9种除了mouseenter和mouseleave所有鼠标事件都会冒泡</p>
+<p>比较:mouseover与mouseenter(mouseout与mouseleave同理)</p>
+<h4 id="例如-11"><a href="#例如-11" class="headerlink" title="例如:"></a>例如:</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"over"</span>&gt;  </span><br><span class="line">    &lt;h2&gt;被触发的 Mouseover 事件次数：&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;  </span><br><span class="line">&lt;/div&gt;  </span><br><span class="line">&lt;div class=<span class="string">"enter"</span>&gt;  </span><br><span class="line">    &lt;h2&gt;被触发的 Mouseenter 事件次数：&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;  </span><br><span class="line">&lt;/div&gt;  </span><br><span class="line">同样穿过一次,over会3次,而enter只有1次</span><br><span class="line">原理:mouseover会把子元素算上,所以移入div --&gt; 再移入h2 --&gt; 再一次移入div</span><br><span class="line">	 mouseenter只会关注绑定的元素</span><br></pre></td></tr></table></figure>
+</code></pre><p>滚轮事件:<br>clientX、clientY 客户区坐标位置,表示事件发生时鼠标指针在视口中的水平和垂直坐标<br>pageX、pageY 页面坐标事件,鼠标光标在页面中的位置(在页面没有滚动的情况下,pageX和pageY的值与clientX和clienY的值相等)<br>screenX、screenY 屏幕坐标位置,鼠标指针相对于整个屏幕的坐标信息<br>offsetX 光标相对于目标元素边界的x坐标<br>offsetY 光标相对于目标元素边界的y坐标</p>
+<p>修改键:<br>按下鼠标键盘</p>
+<h4 id="例如-12"><a href="#例如-12" class="headerlink" title="例如:"></a>例如:</h4><pre><code>```bash
+    var div1 = document.getElementsByClassName(&quot;over&quot;);  
+    div1.addEventListener(&apos;click&apos;,function(e){
+        var keys = new Array();
+        if(e.shiftKey){
+            keys.push(&apos;shift&apos;);
+        }
+        if(e.altKey){
+            keys.push(&apos;altKey&apos;);
+        }
+        if(e.ctrlKey){
+            keys.push(&apos;ctrlKey&apos;);
+        }
+        if(e.metaKey){
+            keys.push(&apos;metaKey&apos;);
+        }
+        alert(&apos;keys&apos;+keys.join(&apos;,&apos;));
+    });
+```  
+</code></pre><p>键盘与文本事件:<br>keydown 按下键盘上的任意键时触发<br>keypress 按下键盘上的字符键时触发<br>keyup 释放键盘上的键时触发</p>
+<p>键码<br>keyCode == 13 回车</p>
+<p>设备事件:<br>1,orientationchange 事件(safari)<br>window.orientation属性3个值: 0表示肖像模式  90左旋转的横向模式  -90右旋转的横向模式</p>
+<p>2,MozOrientation 事件(ff)<br>事件发生在window对象上,event3个属性 x值0 y值0 z值1竖直状态 </p>
+</script></h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/08/jquery.cookie/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/css字体/" rel="prev" title="css字体">
+                css字体 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">PJJ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-JavaScript简介"><span class="nav-number">1.</span> <span class="nav-text">第一章 JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript组成"><span class="nav-number">1.1.</span> <span class="nav-text">javascript组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言组成"><span class="nav-number">1.2.</span> <span class="nav-text">语言组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档对象模型-DOM"><span class="nav-number">1.3.</span> <span class="nav-text">文档对象模型(DOM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器对象模型-BOM"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器对象模型(BOM)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">例如:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-在HTML中使用JavaScript"><span class="nav-number">2.</span> <span class="nav-text">第二章 在HTML中使用JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素"><span class="nav-number">2.1.</span> <span class="nav-text">元素&lt;/h2&gt;&lt;p&gt;向HTML页面中插入JavaScript的主要方法&lt;/p&gt;
+&lt;h4 id=&quot;属性-还有用的&quot;&gt;&lt;a href=&quot;#属性-还有用的&quot; class=&quot;headerlink&quot; title=&quot;属性(还有用的):&quot;&gt;&lt;/a&gt;属性(还有用的):&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;: 编写代码使用的脚本语言的内容类型(MIME类型)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;src: 要执行代码的外部文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;标签的位置&quot;&gt;&lt;a href=&quot;#标签的位置&quot; class=&quot;headerlink&quot; title=&quot;标签的位置&quot;&gt;&lt;/a&gt;&lt;script&gt;标签的位置&lt;/h2&gt;&lt;p&gt;1,惯例放在页面&lt;head&gt;元素中&lt;br&gt;产生的问题:在文档的&lt;head&gt;元素中包含所有JavaScript文件,意味着必须等到全部JavaScript代码全部都被下载、解析和执行完成以后,才能开始呈现页面的内容(浏览器在遇到&lt;body&gt;标签时才开始呈现内容)。&lt;br&gt;            对于需要很多JavaScript代码的页面来说,无疑会导致浏览器在呈现页面时出现明显的延迟,而延迟期间的浏览器窗口中将是一片空白。&lt;br&gt;解决方法:放在&lt;body&gt;元素后面&lt;/p&gt;
+&lt;h1 id=&quot;第三章-基本概念&quot;&gt;&lt;a href=&quot;#第三章-基本概念&quot; class=&quot;headerlink&quot; title=&quot;第三章 基本概念&quot;&gt;&lt;/a&gt;第三章 基本概念&lt;/h1&gt;&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;p&gt;1,区分大小写&lt;/p&gt;
+&lt;p&gt;2,标识符(变量、函数、属性的名字、函数的参数)&lt;/p&gt;
+&lt;h4 id=&quot;规则&quot;&gt;&lt;a href=&quot;#规则&quot; class=&quot;headerlink&quot; title=&quot;规则:&quot;&gt;&lt;/a&gt;规则:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;第一个字符可以是一个字母、下划线(_)、一个美元符号($)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其他字符可以是字母、下划线、美元符号或数字&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;惯例采用驼峰大小写格式,也就是第一个字母小写,剩下的每个有意义的单词的首字母大写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;不能把关键字、保留字、&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;、&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;和null用作标识符&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3,注释&lt;br&gt;//单行注释    &lt;/p&gt;
+&lt;p&gt;/*&lt;em&gt;多行(块级)注释 &lt;/em&gt;/&lt;/p&gt;
+&lt;p&gt;4,严格模式(es5引入)&lt;br&gt;定义: 为JavaScript定义了一种不同的解析与执行模型&lt;/p&gt;
+&lt;h4 id=&quot;例如-1&quot;&gt;&lt;a href=&quot;#例如-1&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;在整个脚本中启用,在顶部添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;use atrict&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;在函数内部启用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt; ()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;use atrict&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器支持: IE10+、FF4+、Safari5.1+、O12+、Chrome&lt;/p&gt;
+&lt;p&gt;5,关键字&lt;br&gt;break do instanceof typeof&lt;br&gt;case else new var&lt;br&gt;catch finally return void&lt;br&gt;continue for switch while&lt;br&gt;debugger(es5) function this with&lt;br&gt;default if throw&lt;br&gt;delete in try&lt;/p&gt;
+&lt;p&gt;6,保留字(在js中还没有任何特定的用途)&lt;br&gt;abstract enum int short&lt;br&gt;boolean export insterface static&lt;br&gt;btye extends long super&lt;br&gt;char final native synchronized&lt;br&gt;class float package throws&lt;br&gt;const goto private transient&lt;br&gt;debugger implements protected volatile&lt;br&gt;double import public let(es5) yield(es5)&lt;/p&gt;
+&lt;p&gt;es5把在非严格模式下运行时的保留字缩减为下列这些:&lt;br&gt;class enum extends super&lt;br&gt;const export import&lt;/p&gt;
+&lt;p&gt;7,变量&lt;br&gt;ECMAScript的变量是松散类型,即可以用来保存任何类型的数据,变量仅仅是一个用来保存值的占位符&lt;/p&gt;
+&lt;p&gt;8,数据类型&lt;br&gt;6种数据类型:number、string、boolean、undefined、null(5种基本数据类型),object&lt;/p&gt;
+&lt;p&gt;9,typeof操作符&lt;br&gt;检查变量的数据类型,返回undefined(未定义)、boolean、string、number、object(对象或null)、function&lt;/p&gt;
+&lt;p&gt;10,undefined类型&lt;br&gt;未初始化,无论在什么情况下都没有必要把一个变量的值显式地设置为undefined&lt;/p&gt;
+&lt;p&gt;11,null类型&lt;br&gt;空对象指针&lt;br&gt;实际上,undefined值是派生自null值的,所以&lt;br&gt;null == undefined ; true&lt;br&gt;只要意在保存对象的变量还没有真正保存对象,就应该明确地让该变量保存null值&lt;/p&gt;
+&lt;p&gt;12,boolean类型&lt;br&gt;转型函数Boolean()&lt;br&gt;可以对任何数据类型的值调用Boolean()函数,总会返回一个Boolean值,返回时true、false取决于要转换值的数据类型及其实际值&lt;/p&gt;
+&lt;p&gt;13,number类型&lt;br&gt;NaN非数值(not a number)是一个特殊的数值,用于表示一个本来要返回数值的操作数未返回数值的情况(这样就不会抛出错误)&lt;/p&gt;
+&lt;h4 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot; title=&quot;特点:&quot;&gt;&lt;/a&gt;特点:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1,任何涉及NaN的操作(如NaN/10)都会返回NaN&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2,NaN与任何值都不相等,包括NaN本身 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NaN == NaN; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;isNaN()函数,可以确定参数(任何类型)是否’不是数值’&lt;br&gt;判断过程:isNaN()在接到一个值之后,会尝试将这个值(字符串’10’或Boolean)转换为数值返回false,不能被转换为数值的值都会返回true&lt;br&gt;isNaN(NaN) true&lt;br&gt;isNaN(10) false&lt;br&gt;isNaN(‘10’) false&lt;br&gt;isNaN(‘blue’) false&lt;br&gt;isNaN(true) false&lt;/p&gt;
+&lt;p&gt;14,数值转换&lt;br&gt;Number()、parseInt()、parseFloat()都可以把非数值转换为数值&lt;/p&gt;
+&lt;h2 id=&quot;Number-转型函数&quot;&gt;&lt;a href=&quot;#Number-转型函数&quot; class=&quot;headerlink&quot; title=&quot;Number()转型函数&quot;&gt;&lt;/a&gt;Number()转型函数&lt;/h2&gt;&lt;p&gt;可以用于任何数据类型&lt;/p&gt;
+&lt;h4 id=&quot;规则-1&quot;&gt;&lt;a href=&quot;#规则-1&quot; class=&quot;headerlink&quot; title=&quot;规则:&quot;&gt;&lt;/a&gt;规则:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;或&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;	1、0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;数字值	不变&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;null	0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;undefined NaN&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;parseInt-、parseFloat&quot;&gt;&lt;a href=&quot;#parseInt-、parseFloat&quot; class=&quot;headerlink&quot; title=&quot;parseInt()、parseFloat()&quot;&gt;&lt;/a&gt;parseInt()、parseFloat()&lt;/h2&gt;&lt;p&gt;专门用于把字符串转换成数值&lt;/p&gt;
+&lt;h2 id=&quot;parseInt&quot;&gt;&lt;a href=&quot;#parseInt&quot; class=&quot;headerlink&quot; title=&quot;parseInt()&quot;&gt;&lt;/a&gt;parseInt()&lt;/h2&gt;&lt;h4 id=&quot;规则-2&quot;&gt;&lt;a href=&quot;#规则-2&quot; class=&quot;headerlink&quot; title=&quot;规则:&quot;&gt;&lt;/a&gt;规则:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1,在转换字符串时,会忽略字符串前面的空格,直至找到第一个非空格字符&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2,如果第一个字符不是数字字符或负号,返回NaN&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;15,string类型&lt;br&gt;转换为字符串&lt;br&gt;1,toString()&lt;br&gt;每个字符串都有一个toString()方法,除null和undefined值没有&lt;/p&gt;
+&lt;p&gt;2,String()&lt;br&gt;任何类型的值都可以转换为字符串&lt;/p&gt;
+&lt;p&gt;16,Object类型&lt;br&gt;Object的每个实例都具有下列属性和方法&lt;/p&gt;
+&lt;h4 id=&quot;例如-2&quot;&gt;&lt;a href=&quot;#例如-2&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Constructor 保存着用于创建当前对象的函数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hasOwnProperty(propertyName) 用于检查给定的属性在当前对象实例中是否存在 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;isPrototypeOf(object) 用于检查传入的对象是否是另一个对象的原型&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;propertyIsEnumerable(propertyName) 检查给定的属性是否能够使用&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;-in语句&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;toLocaleString() 返回对象的字符串,该字符串与执行环境的地区对应&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;toString() 返回对象的字符串 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;valueOf() 返回对象的字符串、数值、布尔值&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;17,操作符&lt;br&gt;定义:描述了一组用于操作数据值的操作符&lt;br&gt;有:算术、位、关系、相等操作符&lt;br&gt;特点:能够适用于很多值&lt;/p&gt;
+&lt;p&gt;1,一元操作符&lt;br&gt;定义:只能操作一个值的操作符&lt;/p&gt;
+&lt;p&gt;2,位操作符&lt;/p&gt;
+&lt;p&gt;3,布尔操作符&lt;br&gt;有3个:非(!)、与(&amp;amp;&amp;amp;)、或(||)&lt;/p&gt;
+&lt;p&gt;4,条件操作符&lt;/p&gt;
+&lt;p&gt;18,语句(流控制语句)&lt;br&gt;定义:使用一或多个关键字来完成给定任务&lt;/p&gt;
+&lt;p&gt;1,if语句&lt;br&gt;if(){}else{}&lt;/p&gt;
+&lt;p&gt;2,do-while语句&lt;br&gt;是一种后测试循环语句,即只有在循环体中的代码执行之后,才会测试出口条件;换句话说,在对条件表达式求值之前,循环体内的代码至少会被执行一次&lt;/p&gt;
+&lt;p&gt;3,while语句&lt;br&gt;前测试循环语句,也是说,在循环体内的代码被执行之前,就会对出口条件求值,循环体内的代码有可能永远不会被执行&lt;/p&gt;
+&lt;p&gt;4,for语句&lt;/p&gt;
+&lt;p&gt;5,for-in语句&lt;br&gt;一种精准的迭代语句,可以用来枚举对象的属性&lt;br&gt;(es5)如果要迭代的对象的变量值为null或undefined,不会执行循环体&lt;/p&gt;
+&lt;p&gt;6,break 和 continue语句&lt;br&gt;break语句会立即退出循环,强制继续执行循环后面的语句&lt;/p&gt;
+&lt;p&gt;continue语句会立即退出循环,但退出循环后会从循环的顶部继续执行&lt;/p&gt;
+&lt;p&gt;7,with语句(淘汰了)&lt;br&gt;作用:将代码的作用域设置到一个特定的对象中&lt;/p&gt;
+&lt;h4 id=&quot;例如-3&quot;&gt;&lt;a href=&quot;#例如-3&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var qs = location.search.substring(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var hostName = location.hostName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var url = location.href;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;改:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;with(location)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	var qs = search.substring(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	var hostName = hostName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	var url = href;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;8,switch语句&lt;/p&gt;
+&lt;p&gt;9,函数&lt;br&gt;任何函数在任何时候都可以通过return语句后跟要返回的值来实现返回值&lt;br&gt;位于return语句之后的任何代码都永远不会执行&lt;/p&gt;
+&lt;p&gt;10,理解函数&lt;br&gt;es函数不介意传递进来多少个参数,也不在乎传进来参数是什么数据类型,&lt;br&gt;原因:es中的参数在内部是用一个数组来表示的,函数接收到的始终都是这个数组&lt;br&gt;实际上,在函数体内可以通过arguments对象来访问这个参数数组,从而获取传递给函数的每一个参数&lt;/p&gt;
+&lt;p&gt;没有传递值的命名参数将自动被赋予undefined值&lt;/p&gt;
+&lt;p&gt;11,没有重载&lt;br&gt;重载定义:可以为一个函数编写两个定义,只要这两个定义的签名(接受的参数的类型和数量)不同即可&lt;/p&gt;
+&lt;h1 id=&quot;第四章-变量、作用域和内存问题&quot;&gt;&lt;a href=&quot;#第四章-变量、作用域和内存问题&quot; class=&quot;headerlink&quot; title=&quot;第四章 变量、作用域和内存问题&quot;&gt;&lt;/a&gt;第四章 变量、作用域和内存问题&lt;/h1&gt;&lt;h2 id=&quot;基本类型和引用类型的值&quot;&gt;&lt;a href=&quot;#基本类型和引用类型的值&quot; class=&quot;headerlink&quot; title=&quot;基本类型和引用类型的值&quot;&gt;&lt;/a&gt;基本类型和引用类型的值&lt;/h2&gt;&lt;p&gt;定义:基本类型值指简单的数据段;引用类型值指由多个值构成的对象&lt;/p&gt;
+&lt;p&gt;5种基本数据类型是按值访问的,操作保存在变量中的实际的值&lt;/p&gt;
+&lt;p&gt;引用类型值是保存在内存中的对象,JavaScript不允许直接访问内存中的位置,也就是不能直接操作对象的内存空间。实际上是在操作对象的引用而不是实际的对象&lt;/p&gt;
+&lt;h2 id=&quot;复制变量值&quot;&gt;&lt;a href=&quot;#复制变量值&quot; class=&quot;headerlink&quot; title=&quot;复制变量值&quot;&gt;&lt;/a&gt;复制变量值&lt;/h2&gt;&lt;p&gt;基本类型值是栈内存&lt;/p&gt;
+&lt;h4 id=&quot;例如-4&quot;&gt;&lt;a href=&quot;#例如-4&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var num1 = 5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var num2 = num2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;从一个变量向另一个变量复制基本类型的值,会创建这个值的一个副本&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;引用类型值是堆内存&lt;/p&gt;
+&lt;h4 id=&quot;例如-5&quot;&gt;&lt;a href=&quot;#例如-5&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var obj1 = new Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var obj2 = obj1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj1.name = &lt;span class=&quot;string&quot;&gt;&quot;ben&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(obj2.name); //&lt;span class=&quot;string&quot;&gt;&quot;ben&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;从一个变量向另一个变量复制引用类型的值,复制的其实是指针,因此两个变量最终都指向同一个对象&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;检测类型&quot;&gt;&lt;a href=&quot;#检测类型&quot; class=&quot;headerlink&quot; title=&quot;检测类型&quot;&gt;&lt;/a&gt;检测类型&lt;/h2&gt;&lt;p&gt;typeof 可以测 字符串、数组、布尔值、undefined、(一个对象或null)object测基本类型&lt;/p&gt;
+&lt;p&gt;instanceof 测引用类型&lt;/p&gt;
+&lt;h2 id=&quot;执行环境及作用域&quot;&gt;&lt;a href=&quot;#执行环境及作用域&quot; class=&quot;headerlink&quot; title=&quot;执行环境及作用域&quot;&gt;&lt;/a&gt;执行环境及作用域&lt;/h2&gt;&lt;p&gt;1,执行环境(也称作用域)&lt;br&gt;定义:变量或函数有权访问的其他数据,决定了它们各自的行为&lt;br&gt;每个执行环境都有一个与之关联的变量对象,环境中定义的所有变量和函数都保存在这个对象中&lt;/p&gt;
+&lt;p&gt;全局执行环境被认为是window对象,因此所有全局变量和函数都是作为window对象的属性和方法创建的&lt;/p&gt;
+&lt;p&gt;一般某个执行环境中的所有代码执行完毕后,该环境被销毁,保存在其中的所有变量和函数定义也随之销毁(全局直到应用程序退出(关闭网页、浏览器)时才会被销毁)&lt;/p&gt;
+&lt;p&gt;机制:当执行流–&amp;gt;进入一个函数时–&amp;gt;函数的环境–&amp;gt;就会被推入一个环境栈中–&amp;gt;而在函数执行之后–&amp;gt;栈将其环境弹出–&amp;gt;把控制权返回给之前的执行环境&lt;/p&gt;
+&lt;p&gt;2,作用域链&lt;br&gt;当代码在一个环境中执行时,会创建变量对象的一个作用域链&lt;/p&gt;
+&lt;p&gt;作用域链用途:保证对执行环境有权访问的所有变量和函数的有序访问&lt;/p&gt;
+&lt;p&gt;3,没有块级作用域&lt;br&gt;理解:由花括号封闭的代码块都有自己的作用域(用es的话来说就是有自己的执行环境)&lt;/p&gt;
+&lt;h4 id=&quot;例如-6&quot;&gt;&lt;a href=&quot;#例如-6&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	var color = &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(color); //&lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如果是其他语言,&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;语句执行完毕后被销毁,但在JavaScript中,&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;语句中的变量声明会将变量添加到当前的执行环境(指全局环境)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4,垃圾收集&lt;br&gt;JavaScript具有自动垃圾收集机制,也就是说,执行环境会负责管理代码执行过程中使用的内存&lt;/p&gt;
+&lt;p&gt;原理:找出那些不在继续使用的变量,然后释放其占用的内存&lt;/p&gt;
+&lt;h1 id=&quot;第十章-DOM&quot;&gt;&lt;a href=&quot;#第十章-DOM&quot; class=&quot;headerlink&quot; title=&quot;第十章 DOM&quot;&gt;&lt;/a&gt;第十章 DOM&lt;/h1&gt;&lt;h2 id=&quot;文档对象模型-DOM-1&quot;&gt;&lt;a href=&quot;#文档对象模型-DOM-1&quot; class=&quot;headerlink&quot; title=&quot;文档对象模型(DOM)&quot;&gt;&lt;/a&gt;文档对象模型(DOM)&lt;/h2&gt;&lt;p&gt;定义: 针对XML但经过扩展用于HTML的应用程序编程接口&lt;/p&gt;
+&lt;p&gt;原理: DOM把整个页面映射为一个多层节点结构，借助DOM提供的API,轻松自如地删除、添加、替换或修改任何节点&lt;/p&gt;
+&lt;p&gt;1,节点层次&lt;br&gt;定义:节点分为几种不同的类型,每种类型分别表示文档中不同的信息及标记,&lt;br&gt;      每个节点都拥有各自的特点、数据和方法,另外也与其他节点存在某种关系,&lt;br&gt;      节点之间的关系构成了层次,而所有页面标记则表现为一个以特定节点为跟节点的树形结构&lt;/p&gt;
+&lt;h1 id=&quot;第十三章-事件&quot;&gt;&lt;a href=&quot;#第十三章-事件&quot; class=&quot;headerlink&quot; title=&quot;第十三章 事件&quot;&gt;&lt;/a&gt;第十三章 事件&lt;/h1&gt;&lt;p&gt;定义:文档或浏览器窗口中发生的一些特定的交互瞬间&lt;/p&gt;
+&lt;p&gt;JavaScript与HTML之间的交互式通过事件实现的&lt;/p&gt;
+&lt;p&gt;1,事件流&lt;br&gt;描述:页面中接收事件的顺序&lt;/p&gt;
+&lt;p&gt;事件冒泡&lt;br&gt;定义:事件开始时由最具体的元素(文档中嵌套层次最深的那个节点)接收,然后逐级向上传播到较为不具体的节点(文档)&lt;/p&gt;
+&lt;p&gt;所有现代浏览器都支持事件冒泡&lt;/p&gt;
+&lt;h4 id=&quot;例如-7&quot;&gt;&lt;a href=&quot;#例如-7&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;title&amp;gt;Event&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;div id=&lt;span class=&quot;string&quot;&gt;&#39;myDiv&#39;&lt;/span&gt;&amp;gt;Click Me&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如何点击&amp;lt;div&amp;gt;元素,事件顺序传播:&amp;lt;div&amp;gt; --&amp;gt; &amp;lt;body&amp;gt; --&amp;gt; &amp;lt;html&amp;gt; --&amp;gt; document --&amp;gt; (window)IE9、ff、chrome会冒泡到window对象&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;事件捕获&lt;br&gt;定义:不太具体的节点应该更早接收到事件,而最具体的节点应该最后接收到事件&lt;br&gt;IE9、ff、chrome支持事件捕获&lt;/p&gt;
+&lt;p&gt;DOM事件流&lt;br&gt;定义:有三个阶段:事件捕获阶段 –&amp;gt; 处于目标阶段 –&amp;gt; 事件冒泡阶段&lt;/p&gt;
+&lt;p&gt;2,事件处理程序(事件侦听器)&lt;br&gt;定义:响应某个事件的函数&lt;/p&gt;
+&lt;p&gt;事件处理程序的名字以’on’开头&lt;/p&gt;
+&lt;p&gt;事件处理程序的方式:&lt;br&gt;HTML事件处理程序&lt;/p&gt;
+&lt;h4 id=&quot;例如-8&quot;&gt;&lt;a href=&quot;#例如-8&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input &lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;button&#39;&lt;/span&gt; value=&lt;span class=&quot;string&quot;&gt;&#39;Click Me&#39;&lt;/span&gt; onclick=&lt;span class=&quot;string&quot;&gt;&#39;showMessage()&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DOM0级事件处理程序:&lt;/p&gt;
+&lt;h4 id=&quot;例如-9&quot;&gt;&lt;a href=&quot;#例如-9&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var btn = document.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;myBtn&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.onclick = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	alert(&lt;span class=&quot;string&quot;&gt;&#39;Clicked&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;删除事件方法:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.onclick = null;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DOM2级事件处理程序:&lt;/p&gt;
+&lt;h4 id=&quot;例如-10&quot;&gt;&lt;a href=&quot;#例如-10&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var btn = document.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;myBtn&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.addEventListener = (&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	alert(this.id);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;,&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;removeEventListener()移除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.removeEventListener = (&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	alert(this.id);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;,&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);//没有用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原因:第二个参数与传入addEventListener()中的那一个是完全不同的函数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var btn = document.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;myBtn&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var handler = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	alert(this.id);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,handler,&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;btn.removeEventListener(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,handler,&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);//有效&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;大多数情况下,都是将事件处理程序添加到事件流的冒泡阶段,可以最大限度地兼容各种浏览器&lt;/p&gt;
+&lt;p&gt;3,事件对象&lt;br&gt;在触发DOM上的某个事件时,会产生一个事件对象event&lt;/p&gt;
+&lt;p&gt;在事件处理程序内部,对象this始终等于currentTarget(当前正在处理事件的那个元素)的值,而target(事件的目标)则只包含事件的实际目标&lt;/p&gt;
+&lt;p&gt;在需要通过一个函数处理多个事件时,可以使用type属性&lt;/p&gt;
+&lt;p&gt;只有在事件处理程序执行期间,event对象才会存在,一旦事件处理程序执行完成,event对象就会被销毁&lt;/p&gt;
+&lt;p&gt;4,事件类型&lt;br&gt;UI事件:&lt;br&gt;定义:那些不一定与用户操作有关的事件&lt;br&gt;load:当页面完全加载后在window上面触发&lt;br&gt;unload:当页面完全卸载后在window上面触发&lt;br&gt;abort:当用户停止下载过程时&lt;br&gt;error:当发生JavaScript错误时在window上面触发&lt;br&gt;select:当用户选择文本框中的一或多个字符时触发&lt;br&gt;resize:当窗口或框架的大小变化时在window或框架上面触发&lt;br&gt;scroll:当用户滚动带滚动条的元素中的内容是,在该元素上面触发&lt;/p&gt;
+&lt;p&gt;焦点事件:&lt;br&gt;blur:在元素失去焦点时触发&lt;br&gt;focus:在元素获得焦点时触发&lt;/p&gt;
+&lt;p&gt;鼠标与滚轮事件(9种):&lt;br&gt;click:单击鼠标&lt;br&gt;dblclick:双击鼠标&lt;/p&gt;
+&lt;p&gt;mouseenter:只有在鼠标指针穿过被选元素时才触发&lt;br&gt;mouseleave:只有在鼠标指针离开被选元素时才触发&lt;/p&gt;
+&lt;p&gt;mousemove:鼠标指针在元素内部移动是重复地触发&lt;/p&gt;
+&lt;p&gt;mouseover:不论鼠标指针穿过被选元素或其子元素,都会触发&lt;br&gt;mouseout:不论鼠标指针离开被选元素还是任何子元素,都会触发&lt;/p&gt;
+&lt;p&gt;mousedown:按下任意鼠标按钮时触发&lt;br&gt;mouseup:用户释放鼠标按钮时触发&lt;/p&gt;
+&lt;p&gt;上面9种除了mouseenter和mouseleave所有鼠标事件都会冒泡&lt;/p&gt;
+&lt;p&gt;比较:mouseover与mouseenter(mouseout与mouseleave同理)&lt;/p&gt;
+&lt;h4 id=&quot;例如-11&quot;&gt;&lt;a href=&quot;#例如-11&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div class=&lt;span class=&quot;string&quot;&gt;&quot;over&quot;&lt;/span&gt;&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;h2&amp;gt;被触发的 Mouseover 事件次数：&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/h2&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div class=&lt;span class=&quot;string&quot;&gt;&quot;enter&quot;&lt;/span&gt;&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;h2&amp;gt;被触发的 Mouseenter 事件次数：&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/h2&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;同样穿过一次,over会3次,而enter只有1次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原理:mouseover会把子元素算上,所以移入div --&amp;gt; 再移入h2 --&amp;gt; 再一次移入div&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 mouseenter只会关注绑定的元素&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;滚轮事件:&lt;br&gt;clientX、clientY 客户区坐标位置,表示事件发生时鼠标指针在视口中的水平和垂直坐标&lt;br&gt;pageX、pageY 页面坐标事件,鼠标光标在页面中的位置(在页面没有滚动的情况下,pageX和pageY的值与clientX和clienY的值相等)&lt;br&gt;screenX、screenY 屏幕坐标位置,鼠标指针相对于整个屏幕的坐标信息&lt;br&gt;offsetX 光标相对于目标元素边界的x坐标&lt;br&gt;offsetY 光标相对于目标元素边界的y坐标&lt;/p&gt;
+&lt;p&gt;修改键:&lt;br&gt;按下鼠标键盘&lt;/p&gt;
+&lt;h4 id=&quot;例如-12&quot;&gt;&lt;a href=&quot;#例如-12&quot; class=&quot;headerlink&quot; title=&quot;例如:&quot;&gt;&lt;/a&gt;例如:&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;```bash
+    var div1 = document.getElementsByClassName(&amp;quot;over&amp;quot;);  
+    div1.addEventListener(&amp;apos;click&amp;apos;,function(e){
+        var keys = new Array();
+        if(e.shiftKey){
+            keys.push(&amp;apos;shift&amp;apos;);
+        }
+        if(e.altKey){
+            keys.push(&amp;apos;altKey&amp;apos;);
+        }
+        if(e.ctrlKey){
+            keys.push(&amp;apos;ctrlKey&amp;apos;);
+        }
+        if(e.metaKey){
+            keys.push(&amp;apos;metaKey&amp;apos;);
+        }
+        alert(&amp;apos;keys&amp;apos;+keys.join(&amp;apos;,&amp;apos;));
+    });
+```  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;键盘与文本事件:&lt;br&gt;keydown 按下键盘上的任意键时触发&lt;br&gt;keypress 按下键盘上的字符键时触发&lt;br&gt;keyup 释放键盘上的键时触发&lt;/p&gt;
+&lt;p&gt;键码&lt;br&gt;keyCode == 13 回车&lt;/p&gt;
+&lt;p&gt;设备事件:&lt;br&gt;1,orientationchange 事件(safari)&lt;br&gt;window.orientation属性3个值: 0表示肖像模式  90左旋转的横向模式  -90右旋转的横向模式&lt;/p&gt;
+&lt;p&gt;2,MozOrientation 事件(ff)&lt;br&gt;事件发生在window对象上,event3个属性 x值0 y值0 z值1竖直状态 &lt;/p&gt;
+</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PJJ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+      本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+  </div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://benpjj.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/06/11/JavaScript高级程序编程设计/';
+          this.page.identifier = '2018/06/11/JavaScript高级程序编程设计/';
+          this.page.title = 'JavaScript高级程序设计';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://benpjj.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
