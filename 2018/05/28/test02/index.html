@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Document 		 			* { 				margin: 0; 				padding: 0; 			} 			 			div.test { 				width: 375px; 				height: 160px; 				background-color: bisque; 				text-align: center; 			} 			 			.hello { 				c">
+<meta name="description" content="Document  	  	 		 			 				北京 				深圳 				上海 				广州 			 		 	 	 	 		addEven(window, &apos;load&apos;, function() { 			var fm = document.getElementById(&apos;myForm&apos;); 			var city = fm.elements[&apos;city&apos;]; //			c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BenPJJ&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2018/05/28/test02/index.html">
 <meta property="og:site_name" content="BenPJJ&#39;s Blog">
-<meta property="og:description" content="Document 		 			* { 				margin: 0; 				padding: 0; 			} 			 			div.test { 				width: 375px; 				height: 160px; 				background-color: bisque; 				text-align: center; 			} 			 			.hello { 				c">
+<meta property="og:description" content="Document  	  	 		 			 				北京 				深圳 				上海 				广州 			 		 	 	 	 		addEven(window, &apos;load&apos;, function() { 			var fm = document.getElementById(&apos;myForm&apos;); 			var city = fm.elements[&apos;city&apos;]; //			c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T10:03:06.087Z">
+<meta property="og:updated_time" content="2018-07-05T11:20:05.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BenPJJ&#39;s Blog">
-<meta name="twitter:description" content="Document 		 			* { 				margin: 0; 				padding: 0; 			} 			 			div.test { 				width: 375px; 				height: 160px; 				background-color: bisque; 				text-align: center; 			} 			 			.hello { 				c">
+<meta name="twitter:description" content="Document  	  	 		 			 				北京 				深圳 				上海 				广州 			 		 	 	 	 		addEven(window, &apos;load&apos;, function() { 			var fm = document.getElementById(&apos;myForm&apos;); 			var city = fm.elements[&apos;city&apos;]; //			c">
 
 
 
@@ -357,33 +357,62 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Document</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-			}
-			
-			div.test {
-				width: 375px;
-				height: 160px;
-				background-color: bisque;
-				text-align: center;
-			}
-			
-			.hello {
-				color: red;
-			}
-		</style>
+
 	</head>
 
 	<body>
-		<div class="test">
-			<div class="hello">
-				<p>Hello Ben</p>
-			</div>
-		</div>
-		
+		<form id="myForm">
+			<select name="city">
+				<option value="beijing">北京</option>
+				<option value="shenzhen">深圳</option>
+				<option value="shanghai">上海</option>
+				<option>广州</option>
+			</select>
+		</form>
 	</body>
+	<script src="base.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		addEven(window, 'load', function() {
+			var fm = document.getElementById('myForm');
+			var city = fm.elements['city'];
+//			city.multiple = true;
+//			city.size = '3';
+//			alert(city.type); //select-one   select-multiple
+//			alert(city.options); //HTMLOptionsCollection
+//			alert(city.options.length); //4
+//			alert(city.options[0]); //第一个选项 HTMLOptionElement
+//			alert(city.options[0].value); 
+//			alert(city.options[0].text); 
+			//value text 是HTML DOM提供的方式
+			
+			//使用DOM获取选项的value和text----兼容性不好
+//			alert(city.options[0].getAttribute('value')+ '----' + city.options[0].firstChild.nodeValue);
+			
+//			alert(city.options[3].value);//对于没有value值的选项,ie7及以下版本得到的是空,其它浏览器得到的是标签之间的文本
+			
+//			addEven(city,'change',function(){
+////				alert(this.selectedIndex);
+//				alert(city.options[this.selectedIndex].value + '----' + city.options[this.selectedIndex].text);
+//			});
+			
+			//设置被选中的选项
+//			city.selectedIndex = 2;
+			
+			addEven(city,'change',function(){
+				if(city.options[2].selected){
+					alert('选择的是上海');
+				}
+			});
+			
+			//设置被选中的选项
+			city.options[2].selected = true;
+			
+			// 添加选项
+			// 1. 使用 DOM 实现
+			var option = document.createElement('option')
+ 		});
+	</script>
+
 </html>
       
     </div>
@@ -498,7 +527,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
